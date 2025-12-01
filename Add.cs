@@ -38,6 +38,16 @@ namespace StokTakip
             }
             txtCode.Text = code;
             txtCode.Enabled = false;
+
+            Random rdm2 = new Random();
+            string set2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string code2 = "";
+            for (int i = 0; i < 4; i++)
+            {
+                code2 += set2[rdm2.Next(set2.Length)];
+            }
+            txtCode2.Text = code2;
+            txtCode2.Enabled = false;
         }
     }
     }
