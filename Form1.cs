@@ -40,6 +40,10 @@ namespace MarketStokTakipApp
             add.ShowDialog();
         }
 
-      
+        private void btnCatalogAdd_Click(object sender, EventArgs e)
+        {
+            CatalogAdd catalogAdd = new CatalogAdd();
+            catalogAdd.ShowDialog();
+        }
     }
 }
