@@ -26,18 +26,18 @@ namespace MarketStokTakipApp
         {
             btnCloseTree.Visible = true;
             tvList.Visible = true;
-            
         }
 
-        private void btnCloseTree_Click(object sender, EventArgs e)
+        private void btnCloseTree_Click_1(object sender, EventArgs e)
         {
-            tvList.Visible=false;
-            btnCloseTree.Visible=false;
+            tvList.Visible = false;
+            btnCloseTree.Visible = false;
         }
-
         private void btnListAdd_Click(object sender, EventArgs e)
         {
           
         }
+
+      
     }
 }
