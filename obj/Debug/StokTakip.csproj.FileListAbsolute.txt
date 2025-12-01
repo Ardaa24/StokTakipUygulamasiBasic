@@ -8,3 +8,4 @@ C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\StokTa
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.exe
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.pdb
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\MarketStokTakipApp.Form1.resources
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.Add.resources

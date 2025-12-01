@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StokTakip;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,7 +36,8 @@ namespace MarketStokTakipApp
         }
         private void btnListAdd_Click(object sender, EventArgs e)
         {
-          
+         Add add = new Add();
+            add.ShowDialog();
         }
 
       
