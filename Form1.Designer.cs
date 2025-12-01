@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Düğüm0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Düğüm0");
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPriceDown = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
@@ -116,7 +116,7 @@
             this.btnGroupAdd.Name = "btnGroupAdd";
             this.btnGroupAdd.Size = new System.Drawing.Size(215, 47);
             this.btnGroupAdd.TabIndex = 1;
-            this.btnGroupAdd.Text = "Kategori  Düzenle";
+            this.btnGroupAdd.Text = "Kategoriler";
             this.btnGroupAdd.UseVisualStyleBackColor = false;
             this.btnGroupAdd.Click += new System.EventHandler(this.btnGroupAdd_Click);
             // 
@@ -146,10 +146,10 @@
             this.tvList.LineColor = System.Drawing.Color.White;
             this.tvList.Location = new System.Drawing.Point(0, 53);
             this.tvList.Name = "tvList";
-            treeNode1.Name = "Düğüm0";
-            treeNode1.Text = "Düğüm0";
+            treeNode2.Name = "Düğüm0";
+            treeNode2.Text = "Düğüm0";
             this.tvList.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.tvList.Size = new System.Drawing.Size(191, 590);
             this.tvList.TabIndex = 1;
             this.tvList.Visible = false;
