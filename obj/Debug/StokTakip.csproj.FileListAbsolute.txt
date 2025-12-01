@@ -1,0 +1,9 @@
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.csproj.AssemblyReference.cache
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.Properties.Resources.resources
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.csproj.GenerateResource.cache
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.csproj.CoreCompileInputs.cache
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\StokTakip.exe.config
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\StokTakip.exe
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\StokTakip.pdb
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.exe
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.pdb
