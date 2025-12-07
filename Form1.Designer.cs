@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Düğüm0");
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDoc = new System.Windows.Forms.Button();
             this.btnCatalogAdd = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -38,8 +39,19 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tvList = new System.Windows.Forms.TreeView();
             this.btnCloseTree = new System.Windows.Forms.Button();
-            this.btnDoc = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtbarcod = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSrc = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,6 +70,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1421, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // btnDoc
+            // 
+            this.btnDoc.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnDoc.FlatAppearance.BorderSize = 0;
+            this.btnDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDoc.Location = new System.Drawing.Point(1134, 6);
+            this.btnDoc.Name = "btnDoc";
+            this.btnDoc.Size = new System.Drawing.Size(215, 34);
+            this.btnDoc.TabIndex = 6;
+            this.btnDoc.Text = "Dökümanlar";
+            this.btnDoc.UseVisualStyleBackColor = false;
             // 
             // btnCatalogAdd
             // 
@@ -174,24 +199,107 @@
             this.btnCloseTree.Visible = false;
             this.btnCloseTree.Click += new System.EventHandler(this.btnCloseTree_Click_1);
             // 
-            // btnDoc
+            // dataGridView1
             // 
-            this.btnDoc.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnDoc.FlatAppearance.BorderSize = 0;
-            this.btnDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDoc.Location = new System.Drawing.Point(1134, 6);
-            this.btnDoc.Name = "btnDoc";
-            this.btnDoc.Size = new System.Drawing.Size(215, 34);
-            this.btnDoc.TabIndex = 6;
-            this.btnDoc.Text = "Dökümanlar";
-            this.btnDoc.UseVisualStyleBackColor = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(665, 87);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(684, 607);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(38, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(232, 28);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Barkod Numarası İle Ara";
+            // 
+            // txtbarcod
+            // 
+            this.txtbarcod.Location = new System.Drawing.Point(43, 90);
+            this.txtbarcod.Name = "txtbarcod";
+            this.txtbarcod.Size = new System.Drawing.Size(227, 34);
+            this.txtbarcod.TabIndex = 7;
+            this.txtbarcod.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(43, 197);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(227, 34);
+            this.txtName.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(49, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 28);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "İsimİle Ara";
+            // 
+            // btnSrc
+            // 
+            this.btnSrc.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnSrc.FlatAppearance.BorderSize = 0;
+            this.btnSrc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSrc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSrc.Location = new System.Drawing.Point(43, 270);
+            this.btnSrc.Name = "btnSrc";
+            this.btnSrc.Size = new System.Drawing.Size(227, 34);
+            this.btnSrc.TabIndex = 10;
+            this.btnSrc.Text = "Listele";
+            this.btnSrc.UseVisualStyleBackColor = false;
+            this.btnSrc.Click += new System.EventHandler(this.btnSrc_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtbarcod);
+            this.groupBox1.Controls.Add(this.btnSrc);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtName);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(276, 87);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(320, 394);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ürün Ara";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::StokTakip.Properties.Resources.sale;
+            this.pictureBox1.Location = new System.Drawing.Point(276, 561);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(320, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(393, 519);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 28);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Satış Yap";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1421, 724);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCloseTree);
             this.Controls.Add(this.tvList);
             this.Controls.Add(this.panel1);
@@ -201,8 +309,14 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -218,6 +332,15 @@
         private System.Windows.Forms.Button btnCloseTree;
         private System.Windows.Forms.Button btnCatalogAdd;
         private System.Windows.Forms.Button btnDoc;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtbarcod;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSrc;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 

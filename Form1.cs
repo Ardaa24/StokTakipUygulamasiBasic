@@ -46,6 +46,26 @@ namespace MarketStokTakipApp
             catalogAdd.ShowDialog();
         }
 
-       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSrc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
