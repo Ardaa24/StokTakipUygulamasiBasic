@@ -33,25 +33,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gbNames = new System.Windows.Forms.GroupBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.txtBuy = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtSale = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtCode2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtBrand = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtPiece = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtSale = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBuy = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gbNames.SuspendLayout();
             this.SuspendLayout();
@@ -111,8 +109,6 @@
             this.gbNames.Controls.Add(this.txtPiece);
             this.gbNames.Controls.Add(this.label8);
             this.gbNames.Controls.Add(this.txtBrand);
-            this.gbNames.Controls.Add(this.txtCode2);
-            this.gbNames.Controls.Add(this.label7);
             this.gbNames.Controls.Add(this.panel2);
             this.gbNames.Controls.Add(this.txtSale);
             this.gbNames.Controls.Add(this.label6);
@@ -131,21 +127,101 @@
             this.gbNames.TabStop = false;
             this.gbNames.Text = "Ürün Bilgileri";
             // 
-            // txtName
+            // label9
             // 
-            this.txtName.Location = new System.Drawing.Point(18, 175);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(203, 34);
-            this.txtName.TabIndex = 0;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(339, 192);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 28);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Birim Adedi";
             // 
-            // label2
+            // txtPiece
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ürün Adı";
+            this.txtPiece.Location = new System.Drawing.Point(334, 225);
+            this.txtPiece.Name = "txtPiece";
+            this.txtPiece.Size = new System.Drawing.Size(203, 34);
+            this.txtPiece.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(339, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 28);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Marka Adı";
+            // 
+            // txtBrand
+            // 
+            this.txtBrand.Location = new System.Drawing.Point(334, 119);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(203, 34);
+            this.txtBrand.TabIndex = 14;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Location = new System.Drawing.Point(0, 337);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(573, 10);
+            this.panel2.TabIndex = 11;
+            // 
+            // txtSale
+            // 
+            this.txtSale.Location = new System.Drawing.Point(324, 393);
+            this.txtSale.Name = "txtSale";
+            this.txtSale.Size = new System.Drawing.Size(203, 34);
+            this.txtSale.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(329, 350);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 28);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Satış Fiyatı";
+            // 
+            // txtBuy
+            // 
+            this.txtBuy.Location = new System.Drawing.Point(18, 393);
+            this.txtBuy.Name = "txtBuy";
+            this.txtBuy.Size = new System.Drawing.Size(203, 34);
+            this.txtBuy.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 350);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 28);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Alış Fiyatı";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(18, 85);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(203, 34);
+            this.txtCode.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 28);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Ürün Kodu";
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(18, 279);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(203, 36);
+            this.cbCategory.TabIndex = 4;
             // 
             // label3
             // 
@@ -156,22 +232,21 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Kategori";
             // 
-            // cbCategory
+            // label2
             // 
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(18, 279);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(203, 36);
-            this.cbCategory.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 28);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Ürün Adı";
             // 
-            // label4
+            // txtName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 28);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Ürün Kodu";
+            this.txtName.Location = new System.Drawing.Point(18, 175);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(203, 34);
+            this.txtName.TabIndex = 0;
             // 
             // btnSave
             // 
@@ -203,101 +278,6 @@
             this.btnBack.Text = "Geri Dön";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(18, 85);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(203, 34);
-            this.txtCode.TabIndex = 6;
-            // 
-            // txtBuy
-            // 
-            this.txtBuy.Location = new System.Drawing.Point(18, 393);
-            this.txtBuy.Name = "txtBuy";
-            this.txtBuy.Size = new System.Drawing.Size(203, 34);
-            this.txtBuy.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 350);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 28);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Alış Fiyatı";
-            // 
-            // txtSale
-            // 
-            this.txtSale.Location = new System.Drawing.Point(324, 393);
-            this.txtSale.Name = "txtSale";
-            this.txtSale.Size = new System.Drawing.Size(203, 34);
-            this.txtSale.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(329, 350);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 28);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Satış Fiyatı";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(0, 337);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(573, 10);
-            this.panel2.TabIndex = 11;
-            // 
-            // txtCode2
-            // 
-            this.txtCode2.Location = new System.Drawing.Point(338, 85);
-            this.txtCode2.Name = "txtCode2";
-            this.txtCode2.Size = new System.Drawing.Size(203, 34);
-            this.txtCode2.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(343, 42);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 28);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Üretici Kodu";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(343, 144);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 28);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Marka Adı";
-            // 
-            // txtBrand
-            // 
-            this.txtBrand.Location = new System.Drawing.Point(338, 175);
-            this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(203, 34);
-            this.txtBrand.TabIndex = 14;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(343, 248);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 28);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Birim Adedi";
-            // 
-            // txtPiece
-            // 
-            this.txtPiece.Location = new System.Drawing.Point(338, 281);
-            this.txtPiece.Name = "txtPiece";
-            this.txtPiece.Size = new System.Drawing.Size(203, 34);
-            this.txtPiece.TabIndex = 16;
             // 
             // Add
             // 
@@ -343,8 +323,6 @@
         private System.Windows.Forms.TextBox txtPiece;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBrand;
-        private System.Windows.Forms.TextBox txtCode2;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtSale;
         private System.Windows.Forms.Label label6;

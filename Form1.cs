@@ -45,5 +45,7 @@ namespace MarketStokTakipApp
             CatalogAdd catalogAdd = new CatalogAdd();
             catalogAdd.ShowDialog();
         }
+
+       
     }
 }

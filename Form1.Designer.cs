@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Düğüm0");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Düğüm0");
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCatalogAdd = new System.Windows.Forms.Button();
-            this.btnPriceDown = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnListAdd = new System.Windows.Forms.Button();
@@ -39,14 +38,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tvList = new System.Windows.Forms.TreeView();
             this.btnCloseTree = new System.Windows.Forms.Button();
+            this.btnDoc = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnDoc);
             this.panel1.Controls.Add(this.btnCatalogAdd);
-            this.panel1.Controls.Add(this.btnPriceDown);
             this.panel1.Controls.Add(this.btnPlus);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnListAdd);
@@ -72,19 +72,6 @@
             this.btnCatalogAdd.Text = "Kategori Ekle";
             this.btnCatalogAdd.UseVisualStyleBackColor = false;
             this.btnCatalogAdd.Click += new System.EventHandler(this.btnCatalogAdd_Click);
-            // 
-            // btnPriceDown
-            // 
-            this.btnPriceDown.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnPriceDown.FlatAppearance.BorderSize = 0;
-            this.btnPriceDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPriceDown.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPriceDown.Location = new System.Drawing.Point(1134, 6);
-            this.btnPriceDown.Name = "btnPriceDown";
-            this.btnPriceDown.Size = new System.Drawing.Size(215, 34);
-            this.btnPriceDown.TabIndex = 4;
-            this.btnPriceDown.Text = "Kampanya Ekle";
-            this.btnPriceDown.UseVisualStyleBackColor = false;
             // 
             // btnPlus
             // 
@@ -162,10 +149,10 @@
             this.tvList.LineColor = System.Drawing.Color.White;
             this.tvList.Location = new System.Drawing.Point(0, 45);
             this.tvList.Name = "tvList";
-            treeNode4.Name = "Düğüm0";
-            treeNode4.Text = "Düğüm0";
+            treeNode1.Name = "Düğüm0";
+            treeNode1.Text = "Düğüm0";
             this.tvList.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            treeNode1});
             this.tvList.Size = new System.Drawing.Size(201, 679);
             this.tvList.TabIndex = 1;
             this.tvList.Visible = false;
@@ -186,6 +173,19 @@
             this.btnCloseTree.UseVisualStyleBackColor = false;
             this.btnCloseTree.Visible = false;
             this.btnCloseTree.Click += new System.EventHandler(this.btnCloseTree_Click_1);
+            // 
+            // btnDoc
+            // 
+            this.btnDoc.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnDoc.FlatAppearance.BorderSize = 0;
+            this.btnDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDoc.Location = new System.Drawing.Point(1134, 6);
+            this.btnDoc.Name = "btnDoc";
+            this.btnDoc.Size = new System.Drawing.Size(215, 34);
+            this.btnDoc.TabIndex = 6;
+            this.btnDoc.Text = "Dökümanlar";
+            this.btnDoc.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -213,11 +213,11 @@
         private System.Windows.Forms.Button btnListAdd;
         private System.Windows.Forms.Button btnGroupAdd;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnPriceDown;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.TreeView tvList;
         private System.Windows.Forms.Button btnCloseTree;
         private System.Windows.Forms.Button btnCatalogAdd;
+        private System.Windows.Forms.Button btnDoc;
     }
 }
 

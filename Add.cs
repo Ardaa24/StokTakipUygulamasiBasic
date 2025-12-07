@@ -46,8 +46,7 @@ namespace StokTakip
             {
                 code2 += set2[rdm2.Next(set2.Length)];
             }
-            txtCode2.Text = code2;
-            txtCode2.Enabled = false;
+            
         }
     }
     }
