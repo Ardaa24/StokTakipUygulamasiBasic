@@ -10,3 +10,8 @@ C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTa
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\MarketStokTakipApp.Form1.resources
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.Add.resources
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.CatalogAdd.resources
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\EntityFramework.dll
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\EntityFramework.xml
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.csproj.Up2Date

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace MarketStokTakipApp
 {
@@ -16,6 +17,57 @@ namespace MarketStokTakipApp
         public Form1()
         {
             InitializeComponent();
+        }
+
+        SqlConnection conn = new SqlConnection("Data Source=localdb)\\MSSQLLocalDB;Initial Catalog=StokTakip;Integrated Security=True");
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            StyleDataGrid();
+            LoadProducts();
+        }
+
+        private void LoadProducts()
+        {
+        
+        }
+
+        private void StyleDataGrid()
+        {
+
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.GridColor = Color.FromArgb(230, 230, 230);
+
+
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 235, 243);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 11);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            dataGridView1.RowTemplate.Height = 40;
+
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(242, 242, 242);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.ColumnHeadersHeight = 45;
+
+
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+
+
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
+
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,10 +98,7 @@ namespace MarketStokTakipApp
             catalogAdd.ShowDialog();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
