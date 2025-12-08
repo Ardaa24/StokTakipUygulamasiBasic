@@ -278,6 +278,7 @@
             this.tvList.Name = "tvList";
             this.tvList.Size = new System.Drawing.Size(237, 679);
             this.tvList.TabIndex = 14;
+            this.tvList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvList_AfterSelect_1);
             // 
             // Form1
             // 

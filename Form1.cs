@@ -162,10 +162,10 @@ namespace MarketStokTakipApp
             Application.Exit();
         }
 
- 
+
         private void btnListAdd_Click(object sender, EventArgs e)
         {
-         Add add = new Add();
+            Add add = new Add();
             add.ShowDialog();
         }
 
@@ -175,6 +175,34 @@ namespace MarketStokTakipApp
             catalogAdd.ShowDialog();
         }
 
-       
+        private void tvList_AfterSelect_1(object sender, TreeViewEventArgs e)
+        {
+            if (e.Node.Tag == null)
+                return;
+
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT * FROM tblProduct WHERE CategoryCode = @ccode", conn);
+
+                cmd.Parameters.AddWithValue("@ccode", e.Node.Tag);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Filtreleme Hatası");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
