@@ -119,7 +119,6 @@
             this.btnPlus.TabIndex = 3;
             this.btnPlus.Text = "Stok Görüntüle";
             this.btnPlus.UseVisualStyleBackColor = false;
-            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // panel3
             // 

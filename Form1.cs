@@ -243,7 +243,7 @@ namespace MarketStokTakipApp
         private void btnSale_Click(object sender, EventArgs e)
         {
             UpdateStock();
-            cart.Clear();    
+            cart.Clear();
             //PrintDocument pd = new PrintDocument();
 
             //pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";
@@ -256,6 +256,15 @@ namespace MarketStokTakipApp
             //{
             //    pd.Print();
             //}
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(
+                "INSERT INTO tblSale (SaleDate, TotalAmount) VALUES (@SaleDate, @TotalAmount)",
+                conn);
+            cmd.Parameters.AddWithValue("@SaleDate", DateTime.Now);
+            cmd.Parameters.AddWithValue("@TotalAmount", total);
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
             MessageBox.Show("Satış tamamlandı!", "Bilgi");
             cartLines.Clear();
             lbCart.Items.Clear();
@@ -294,10 +303,7 @@ namespace MarketStokTakipApp
             LoadProducts();
         }
 
-        private void btnPlus_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //private void Pd_PrintPage(object sender, PrintPageEventArgs e)
         //{
