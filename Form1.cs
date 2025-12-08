@@ -3,15 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Printing;
-using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace MarketStokTakipApp
 {
@@ -209,23 +211,37 @@ namespace MarketStokTakipApp
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return; // header tıklanmasın
+            if (e.RowIndex < 0) return;
 
-            string productName = dataGridView1.Rows[e.RowIndex]
-                .Cells["pname"].Value.ToString();
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-            decimal price = Convert.ToDecimal(
-                dataGridView1.Rows[e.RowIndex]
-                .Cells["sprice"].Value);
+            string pcode = row.Cells["pcode"].Value.ToString();
+            string pname = row.Cells["pname"].Value.ToString();
+            decimal price = Convert.ToDecimal(row.Cells["sprice"].Value);
+            int stock = Convert.ToInt32(row.Cells["number"].Value);
 
-            lbCart.Items.Add($"{productName} - {price} ₺");
+            if (stock <= 0)
+            {
+                MessageBox.Show("Stok yok!");
+                return;
+            }
+
+            cart.Add(new CartItem
+            {
+                ProductCode = pcode,
+                Quantity = 1
+            });
+
+            lbCart.Items.Add($"{pname} - {price} ₺");
 
             total += price;
-            lblTotal.Text = total.ToString("0.00") + " ₺";
+            lblTotal.Text = total.ToString("0.00 ₺");
         }
 
         private void btnSale_Click(object sender, EventArgs e)
         {
+            UpdateStock();
+            cart.Clear();    
             PrintDocument pd = new PrintDocument();
 
             pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";
@@ -238,7 +254,38 @@ namespace MarketStokTakipApp
             {
                 pd.Print();
             }
+            cartLines.Clear();
+            lbCart.Items.Clear();
+            total = 0;
+            lblTotal.Text = "0 ₺";
+            LoadProducts();
         }
+
+        class CartItem
+        {
+            public string ProductCode;   // pcode
+            public int Quantity;         // satılan adet
+        }
+        List<CartItem> cart = new List<CartItem>();
+        private void UpdateStock()
+        {
+            conn.Open();
+
+            foreach (var item in cart)
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE tblProduct SET number = number - @qty WHERE pcode = @pcode",
+                    conn);
+
+                cmd.Parameters.AddWithValue("@qty", item.Quantity);
+                cmd.Parameters.AddWithValue("@pcode", item.ProductCode);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            conn.Close();
+        }
+
         private void Pd_PrintPage(object sender, PrintPageEventArgs e)
         {
             float y = 20;
