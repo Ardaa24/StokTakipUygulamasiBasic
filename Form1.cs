@@ -287,6 +287,11 @@ namespace MarketStokTakipApp
             conn.Close();
         }
 
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            LoadProducts();
+        }
+
         //private void Pd_PrintPage(object sender, PrintPageEventArgs e)
         //{
         //    float y = 20;

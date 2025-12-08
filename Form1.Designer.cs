@@ -43,18 +43,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSrc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSale = new System.Windows.Forms.PictureBox();
             this.pnlCost = new System.Windows.Forms.Panel();
             this.lbCart = new System.Windows.Forms.ListBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tvList = new System.Windows.Forms.TreeView();
             this.btnCloseTree = new System.Windows.Forms.Button();
+            this.btnRestart = new System.Windows.Forms.PictureBox();
+            this.btnSale = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
             this.pnlCost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -239,17 +241,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Ara";
             // 
-            // btnSale
-            // 
-            this.btnSale.Image = global::StokTakip.Properties.Resources.sale;
-            this.btnSale.Location = new System.Drawing.Point(255, 565);
-            this.btnSale.Name = "btnSale";
-            this.btnSale.Size = new System.Drawing.Size(320, 83);
-            this.btnSale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSale.TabIndex = 12;
-            this.btnSale.TabStop = false;
-            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
-            // 
             // pnlCost
             // 
             this.pnlCost.Controls.Add(this.lbCart);
@@ -314,11 +305,34 @@
             this.btnCloseTree.UseVisualStyleBackColor = false;
             this.btnCloseTree.Click += new System.EventHandler(this.btnCloseTree_Click);
             // 
+            // btnRestart
+            // 
+            this.btnRestart.Image = global::StokTakip.Properties.Resources.category;
+            this.btnRestart.Location = new System.Drawing.Point(590, 654);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(495, 43);
+            this.btnRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRestart.TabIndex = 16;
+            this.btnRestart.TabStop = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
+            // btnSale
+            // 
+            this.btnSale.Image = global::StokTakip.Properties.Resources.sale;
+            this.btnSale.Location = new System.Drawing.Point(255, 565);
+            this.btnSale.Name = "btnSale";
+            this.btnSale.Size = new System.Drawing.Size(320, 83);
+            this.btnSale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSale.TabIndex = 12;
+            this.btnSale.TabStop = false;
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 724);
+            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.btnCloseTree);
             this.Controls.Add(this.tvList);
             this.Controls.Add(this.pnlCost);
@@ -337,9 +351,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
             this.pnlCost.ResumeLayout(false);
             this.pnlCost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,6 +383,7 @@
         private System.Windows.Forms.Button btnCloseTree;
         private System.Windows.Forms.Button btnCategoryListe;
         internal System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.PictureBox btnRestart;
     }
 }
 
