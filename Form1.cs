@@ -242,18 +242,19 @@ namespace MarketStokTakipApp
         {
             UpdateStock();
             cart.Clear();    
-            PrintDocument pd = new PrintDocument();
+            //PrintDocument pd = new PrintDocument();
 
-            pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";
-            pd.PrintPage += Pd_PrintPage;
+            //pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+            //pd.PrintPage += Pd_PrintPage;
 
-            PrintDialog dlg = new PrintDialog();
-            dlg.Document = pd;
+            //PrintDialog dlg = new PrintDialog();
+            //dlg.Document = pd;
 
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                pd.Print();
-            }
+            //if (dlg.ShowDialog() == DialogResult.OK)
+            //{
+            //    pd.Print();
+            //}
+            MessageBox.Show("Satış tamamlandı!", "Bilgi");
             cartLines.Clear();
             lbCart.Items.Clear();
             total = 0;
@@ -286,30 +287,30 @@ namespace MarketStokTakipApp
             conn.Close();
         }
 
-        private void Pd_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            float y = 20;
-            Font title = new Font("Arial", 14, FontStyle.Bold);
-            Font normal = new Font("Arial", 10);
+        //private void Pd_PrintPage(object sender, PrintPageEventArgs e)
+        //{
+        //    float y = 20;
+        //    Font title = new Font("Arial", 14, FontStyle.Bold);
+        //    Font normal = new Font("Arial", 10);
 
-            e.Graphics.DrawString("MARKET FİŞİ", title, Brushes.Black, 80, y);
-            y += 30;
+        //    e.Graphics.DrawString("MARKET FİŞİ", title, Brushes.Black, 80, y);
+        //    y += 30;
 
-            e.Graphics.DrawString(DateTime.Now.ToString(), normal, Brushes.Black, 10, y);
-            y += 30;
+        //    e.Graphics.DrawString(DateTime.Now.ToString(), normal, Brushes.Black, 10, y);
+        //    y += 30;
 
-            foreach (string line in cartLines)
-            {
-                e.Graphics.DrawString(line, normal, Brushes.Black, 10, y);
-                y += 20;
-            }
+        //    foreach (string line in cartLines)
+        //    {
+        //        e.Graphics.DrawString(line, normal, Brushes.Black, 10, y);
+        //        y += 20;
+        //    }
 
-            y += 10;
-            e.Graphics.DrawLine(Pens.Black, 10, y, 200, y);
-            y += 10;
+        //    y += 10;
+        //    e.Graphics.DrawLine(Pens.Black, 10, y, 200, y);
+        //    y += 10;
 
-            e.Graphics.DrawString("TOPLAM: " + total.ToString("0.00 ₺"), title, Brushes.Black, 10, y);
-        }
+        //    e.Graphics.DrawString("TOPLAM: " + total.ToString("0.00 ₺"), title, Brushes.Black, 10, y);
+        //}
     }
 
 
