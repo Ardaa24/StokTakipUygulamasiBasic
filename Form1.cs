@@ -114,23 +114,9 @@ namespace MarketStokTakipApp
             catalogAdd.ShowDialog();
         }
 
-      
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tvList_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSrc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

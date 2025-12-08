@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.gbNames = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.rtbComment = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtType = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.gbNames.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,7 @@
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label2
             // 
@@ -126,6 +127,15 @@
             this.gbNames.TabIndex = 7;
             this.gbNames.TabStop = false;
             this.gbNames.Text = "Ürün Bilgileri";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(318, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 28);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Açıklama";
             // 
             // rtbComment
             // 
@@ -200,15 +210,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(657, 39);
             this.panel1.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(318, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 28);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Açıklama";
             // 
             // CatalogAdd
             // 

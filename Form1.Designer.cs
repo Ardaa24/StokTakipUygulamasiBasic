@@ -185,6 +185,7 @@
             this.tvList.Size = new System.Drawing.Size(201, 679);
             this.tvList.TabIndex = 1;
             this.tvList.Visible = false;
+            this.tvList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvList_AfterSelect);
             // 
             // btnCloseTree
             // 
@@ -213,7 +214,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(495, 512);
             this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -230,7 +230,6 @@
             this.txtbarcod.Name = "txtbarcod";
             this.txtbarcod.Size = new System.Drawing.Size(227, 34);
             this.txtbarcod.TabIndex = 7;
-            this.txtbarcod.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtName
             // 
@@ -260,7 +259,6 @@
             this.btnSrc.TabIndex = 10;
             this.btnSrc.Text = "Listele";
             this.btnSrc.UseVisualStyleBackColor = false;
-            this.btnSrc.Click += new System.EventHandler(this.btnSrc_Click);
             // 
             // groupBox1
             // 

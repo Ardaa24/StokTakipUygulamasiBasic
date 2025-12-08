@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace StokTakip
 {
@@ -16,6 +17,8 @@ namespace StokTakip
         {
             InitializeComponent();
         }
+        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StokDB;Integrated Security=True");
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -38,6 +41,19 @@ namespace StokTakip
             }
            txtCatalogCode.Text = code;
             txtCatalogCode.Enabled = false;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblCategory (ccode,cname,ctype,comment) VALUES (@ccode,@cname,@ctype,@comment)", conn);
+            cmd.Parameters.AddWithValue("@ccode", txtCatalogCode.Text);
+            cmd.Parameters.AddWithValue("@cname", txtName.Text);
+            cmd.Parameters.AddWithValue("@ctype", txtType.Text);
+            cmd.Parameters.AddWithValue("@comment", rtbComment.Text);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
         }
     }
 }
