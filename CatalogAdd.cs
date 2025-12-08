@@ -1,16 +1,17 @@
-﻿using System;
+﻿using MarketStokTakipApp;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-
-using System.IO;
-using System.Diagnostics;
 
 namespace StokTakip
 {
@@ -56,7 +57,10 @@ namespace StokTakip
             cmd.Parameters.AddWithValue("@comment", rtbComment.Text);
             cmd.ExecuteNonQuery();
             conn.Close();
-
+            MessageBox.Show("Kategori başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
+
+   
     }
 }

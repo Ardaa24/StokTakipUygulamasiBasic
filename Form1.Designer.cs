@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCategoryListe = new System.Windows.Forms.Button();
-            this.btnDoc = new System.Windows.Forms.Button();
             this.btnCatalogAdd = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -49,12 +48,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tvList = new System.Windows.Forms.TreeView();
             this.btnCloseTree = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.PictureBox();
             this.btnRestart = new System.Windows.Forms.PictureBox();
             this.btnSale = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlCost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +64,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.btnCategoryListe);
-            this.panel1.Controls.Add(this.btnDoc);
             this.panel1.Controls.Add(this.btnCatalogAdd);
             this.panel1.Controls.Add(this.btnPlus);
             this.panel1.Controls.Add(this.panel3);
@@ -82,26 +82,14 @@
             this.btnCategoryListe.FlatAppearance.BorderSize = 0;
             this.btnCategoryListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategoryListe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCategoryListe.Location = new System.Drawing.Point(225, 5);
+            this.btnCategoryListe.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCategoryListe.Location = new System.Drawing.Point(367, 4);
             this.btnCategoryListe.Name = "btnCategoryListe";
             this.btnCategoryListe.Size = new System.Drawing.Size(215, 34);
             this.btnCategoryListe.TabIndex = 7;
-            this.btnCategoryListe.Text = "Kategori Ekle";
+            this.btnCategoryListe.Text = "Kategori Listesi";
             this.btnCategoryListe.UseVisualStyleBackColor = false;
             this.btnCategoryListe.Click += new System.EventHandler(this.btnCategoryListe_Click);
-            // 
-            // btnDoc
-            // 
-            this.btnDoc.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnDoc.FlatAppearance.BorderSize = 0;
-            this.btnDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDoc.Location = new System.Drawing.Point(1162, 6);
-            this.btnDoc.Name = "btnDoc";
-            this.btnDoc.Size = new System.Drawing.Size(215, 34);
-            this.btnDoc.TabIndex = 6;
-            this.btnDoc.Text = "Dökümanlar";
-            this.btnDoc.UseVisualStyleBackColor = false;
             // 
             // btnCatalogAdd
             // 
@@ -109,7 +97,8 @@
             this.btnCatalogAdd.FlatAppearance.BorderSize = 0;
             this.btnCatalogAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCatalogAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCatalogAdd.Location = new System.Drawing.Point(461, 6);
+            this.btnCatalogAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCatalogAdd.Location = new System.Drawing.Point(603, 5);
             this.btnCatalogAdd.Name = "btnCatalogAdd";
             this.btnCatalogAdd.Size = new System.Drawing.Size(215, 34);
             this.btnCatalogAdd.TabIndex = 5;
@@ -123,12 +112,14 @@
             this.btnPlus.FlatAppearance.BorderSize = 0;
             this.btnPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPlus.Location = new System.Drawing.Point(929, 6);
+            this.btnPlus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPlus.Location = new System.Drawing.Point(1071, 5);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(215, 34);
             this.btnPlus.TabIndex = 3;
             this.btnPlus.Text = "Stok Görüntüle";
             this.btnPlus.UseVisualStyleBackColor = false;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // panel3
             // 
@@ -145,7 +136,8 @@
             this.btnListAdd.FlatAppearance.BorderSize = 0;
             this.btnListAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListAdd.Location = new System.Drawing.Point(693, 6);
+            this.btnListAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnListAdd.Location = new System.Drawing.Point(835, 5);
             this.btnListAdd.Name = "btnListAdd";
             this.btnListAdd.Size = new System.Drawing.Size(215, 34);
             this.btnListAdd.TabIndex = 0;
@@ -236,7 +228,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(255, 136);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 394);
+            this.groupBox1.Size = new System.Drawing.Size(320, 407);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Ara";
@@ -281,9 +273,10 @@
             // tvList
             // 
             this.tvList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tvList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tvList.Dock = System.Windows.Forms.DockStyle.Left;
             this.tvList.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.tvList.LineColor = System.Drawing.Color.Silver;
+            this.tvList.LineColor = System.Drawing.Color.White;
             this.tvList.Location = new System.Drawing.Point(0, 45);
             this.tvList.Name = "tvList";
             this.tvList.Size = new System.Drawing.Size(237, 679);
@@ -305,12 +298,24 @@
             this.btnCloseTree.UseVisualStyleBackColor = false;
             this.btnCloseTree.Click += new System.EventHandler(this.btnCloseTree_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnPrint.Image = global::StokTakip.Properties.Resources._2832794;
+            this.btnPrint.Location = new System.Drawing.Point(493, 565);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(82, 83);
+            this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPrint.TabIndex = 17;
+            this.btnPrint.TabStop = false;
+            // 
             // btnRestart
             // 
-            this.btnRestart.Image = global::StokTakip.Properties.Resources.category;
-            this.btnRestart.Location = new System.Drawing.Point(590, 654);
+            this.btnRestart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnRestart.Image = global::StokTakip.Properties.Resources.restart_icon_9;
+            this.btnRestart.Location = new System.Drawing.Point(376, 565);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(495, 43);
+            this.btnRestart.Size = new System.Drawing.Size(82, 83);
             this.btnRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRestart.TabIndex = 16;
             this.btnRestart.TabStop = false;
@@ -318,10 +323,11 @@
             // 
             // btnSale
             // 
+            this.btnSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnSale.Image = global::StokTakip.Properties.Resources.sale;
             this.btnSale.Location = new System.Drawing.Point(255, 565);
             this.btnSale.Name = "btnSale";
-            this.btnSale.Size = new System.Drawing.Size(320, 83);
+            this.btnSale.Size = new System.Drawing.Size(89, 83);
             this.btnSale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSale.TabIndex = 12;
             this.btnSale.TabStop = false;
@@ -332,6 +338,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 724);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.btnCloseTree);
             this.Controls.Add(this.tvList);
@@ -353,6 +360,7 @@
             this.groupBox1.PerformLayout();
             this.pnlCost.ResumeLayout(false);
             this.pnlCost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
             this.ResumeLayout(false);
@@ -367,7 +375,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Button btnCatalogAdd;
-        private System.Windows.Forms.Button btnDoc;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtbarcod;
@@ -379,11 +386,12 @@
         private System.Windows.Forms.Panel pnlCost;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox lbCart;
-        private System.Windows.Forms.TreeView tvList;
         private System.Windows.Forms.Button btnCloseTree;
         private System.Windows.Forms.Button btnCategoryListe;
         internal System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.PictureBox btnRestart;
+        private System.Windows.Forms.PictureBox btnPrint;
+        internal System.Windows.Forms.TreeView tvList;
     }
 }
 

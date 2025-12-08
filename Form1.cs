@@ -42,7 +42,7 @@ namespace MarketStokTakipApp
 
         }
 
-        private void LoadCategories()
+        public void LoadCategories()
         {
             tvList.Nodes.Clear();
 
@@ -200,8 +200,10 @@ namespace MarketStokTakipApp
 
         private void btnCategoryListe_Click(object sender, EventArgs e)
         {
+            LoadCategories();
             tvList.Visible = true;
             btnCloseTree.Visible = true;
+
         }
         private void btnCloseTree_Click(object sender, EventArgs e)
         {
@@ -290,6 +292,11 @@ namespace MarketStokTakipApp
         private void btnRestart_Click(object sender, EventArgs e)
         {
             LoadProducts();
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+
         }
 
         //private void Pd_PrintPage(object sender, PrintPageEventArgs e)
