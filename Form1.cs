@@ -19,7 +19,7 @@ namespace MarketStokTakipApp
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=localdb)\\MSSQLLocalDB;Initial Catalog=StokTakip;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StokDB;Integrated Security=True");
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,23 @@ namespace MarketStokTakipApp
 
         private void LoadProducts()
         {
-        
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM tblProduct", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "HATA");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void StyleDataGrid()
