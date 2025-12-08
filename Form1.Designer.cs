@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCategoryListe = new System.Windows.Forms.Button();
             this.btnDoc = new System.Windows.Forms.Button();
             this.btnCatalogAdd = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
@@ -42,18 +43,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSrc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSale = new System.Windows.Forms.PictureBox();
             this.pnlCost = new System.Windows.Forms.Panel();
             this.lbCart = new System.Windows.Forms.ListBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tvList = new System.Windows.Forms.TreeView();
             this.btnCloseTree = new System.Windows.Forms.Button();
-            this.btnCategoryListe = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
             this.pnlCost.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1445, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCategoryListe
+            // 
+            this.btnCategoryListe.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnCategoryListe.FlatAppearance.BorderSize = 0;
+            this.btnCategoryListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoryListe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCategoryListe.Location = new System.Drawing.Point(225, 5);
+            this.btnCategoryListe.Name = "btnCategoryListe";
+            this.btnCategoryListe.Size = new System.Drawing.Size(215, 34);
+            this.btnCategoryListe.TabIndex = 7;
+            this.btnCategoryListe.Text = "Kategori Ekle";
+            this.btnCategoryListe.UseVisualStyleBackColor = false;
+            this.btnCategoryListe.Click += new System.EventHandler(this.btnCategoryListe_Click);
             // 
             // btnDoc
             // 
@@ -164,6 +178,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(495, 512);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -224,15 +239,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Ara";
             // 
-            // pictureBox1
+            // btnSale
             // 
-            this.pictureBox1.Image = global::StokTakip.Properties.Resources.sale;
-            this.pictureBox1.Location = new System.Drawing.Point(255, 565);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 83);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.btnSale.Image = global::StokTakip.Properties.Resources.sale;
+            this.btnSale.Location = new System.Drawing.Point(255, 565);
+            this.btnSale.Name = "btnSale";
+            this.btnSale.Size = new System.Drawing.Size(320, 83);
+            this.btnSale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSale.TabIndex = 12;
+            this.btnSale.TabStop = false;
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
             // 
             // pnlCost
             // 
@@ -298,20 +314,6 @@
             this.btnCloseTree.UseVisualStyleBackColor = false;
             this.btnCloseTree.Click += new System.EventHandler(this.btnCloseTree_Click);
             // 
-            // btnCategoryListe
-            // 
-            this.btnCategoryListe.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnCategoryListe.FlatAppearance.BorderSize = 0;
-            this.btnCategoryListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoryListe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCategoryListe.Location = new System.Drawing.Point(225, 5);
-            this.btnCategoryListe.Name = "btnCategoryListe";
-            this.btnCategoryListe.Size = new System.Drawing.Size(215, 34);
-            this.btnCategoryListe.TabIndex = 7;
-            this.btnCategoryListe.Text = "Kategori Ekle";
-            this.btnCategoryListe.UseVisualStyleBackColor = false;
-            this.btnCategoryListe.Click += new System.EventHandler(this.btnCategoryListe_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -320,7 +322,7 @@
             this.Controls.Add(this.btnCloseTree);
             this.Controls.Add(this.tvList);
             this.Controls.Add(this.pnlCost);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnSale);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
@@ -335,7 +337,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
             this.pnlCost.ResumeLayout(false);
             this.pnlCost.PerformLayout();
             this.ResumeLayout(false);
@@ -358,14 +360,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSrc;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnSale;
         private System.Windows.Forms.Panel pnlCost;
-        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox lbCart;
         private System.Windows.Forms.TreeView tvList;
         private System.Windows.Forms.Button btnCloseTree;
         private System.Windows.Forms.Button btnCategoryListe;
+        internal System.Windows.Forms.Label lblTotal;
     }
 }
 

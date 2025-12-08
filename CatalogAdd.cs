@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+using System.IO;
+using System.Diagnostics;
+
 namespace StokTakip
 {
     public partial class CatalogAdd : Form

@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
+using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MarketStokTakipApp
@@ -22,6 +24,10 @@ namespace MarketStokTakipApp
 
         SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=StokDB;Integrated Security=True");
 
+        //Global Referances
+        List<string> cartLines = new List<string>();
+        decimal total = 0;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             btnCloseTree.Visible= false;
@@ -29,6 +35,8 @@ namespace MarketStokTakipApp
             StyleDataGrid();
             LoadProducts();
             LoadCategories();
+            lblTotal.Text = "0.00 ₺";
+            total= 0; 
 
         }
 
@@ -58,24 +66,6 @@ namespace MarketStokTakipApp
             finally
             {
                 conn.Close();
-            }
-        }
-
-
-
-
-
-        private void LoadSubCategories(TreeNode parentNode, DataTable dt)
-        {
-            foreach (DataRow row in dt.Rows)
-            {
-                if (row["ctype"].ToString().Trim().ToLower() == "alt" &&
-                    row["comment"].ToString() == parentNode.Tag.ToString())
-                {
-                    TreeNode sub = new TreeNode(row["cname"].ToString());
-                    sub.Tag = row["ccode"];
-                    parentNode.Nodes.Add(sub);
-                }
             }
         }
 
@@ -217,6 +207,63 @@ namespace MarketStokTakipApp
             btnCloseTree.Visible= false;
         }
 
-       
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; // header tıklanmasın
+
+            string productName = dataGridView1.Rows[e.RowIndex]
+                .Cells["pname"].Value.ToString();
+
+            decimal price = Convert.ToDecimal(
+                dataGridView1.Rows[e.RowIndex]
+                .Cells["sprice"].Value);
+
+            lbCart.Items.Add($"{productName} - {price} ₺");
+
+            total += price;
+            lblTotal.Text = total.ToString("0.00") + " ₺";
+        }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            PrintDocument pd = new PrintDocument();
+
+            pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+            pd.PrintPage += Pd_PrintPage;
+
+            PrintDialog dlg = new PrintDialog();
+            dlg.Document = pd;
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                pd.Print();
+            }
+        }
+        private void Pd_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            float y = 20;
+            Font title = new Font("Arial", 14, FontStyle.Bold);
+            Font normal = new Font("Arial", 10);
+
+            e.Graphics.DrawString("MARKET FİŞİ", title, Brushes.Black, 80, y);
+            y += 30;
+
+            e.Graphics.DrawString(DateTime.Now.ToString(), normal, Brushes.Black, 10, y);
+            y += 30;
+
+            foreach (string line in cartLines)
+            {
+                e.Graphics.DrawString(line, normal, Brushes.Black, 10, y);
+                y += 20;
+            }
+
+            y += 10;
+            e.Graphics.DrawLine(Pens.Black, 10, y, 200, y);
+            y += 10;
+
+            e.Graphics.DrawString("TOPLAM: " + total.ToString("0.00 ₺"), title, Brushes.Black, 10, y);
+        }
     }
+
+
 }
