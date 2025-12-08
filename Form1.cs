@@ -231,10 +231,13 @@ namespace MarketStokTakipApp
             cart.Add(new CartItem
             {
                 ProductCode = pcode,
+                ProductName = pname,
+                Price = price,
                 Quantity = 1
             });
 
             lbCart.Items.Add($"{pname} - {price} ₺");
+
 
             total += price;
             lblTotal.Text = total.ToString("0.00 ₺");
@@ -275,8 +278,10 @@ namespace MarketStokTakipApp
 
         class CartItem
         {
-            public string ProductCode;   // pcode
-            public int Quantity;         // satılan adet
+            public string ProductCode;
+            public string ProductName;
+            public decimal Price;
+            public int Quantity;
         }
         List<CartItem> cart = new List<CartItem>();
         private void UpdateStock()
@@ -317,7 +322,21 @@ namespace MarketStokTakipApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           
+            if (lbCart.SelectedIndex == -1)
+            {
+                MessageBox.Show("Silinecek ürünü seçin!");
+                return;
+            }
+
+            int index = lbCart.SelectedIndex;
+
+            CartItem item = cart[index];
+
+            total -= item.Price * item.Quantity;
+            lblTotal.Text = total.ToString("0.00 ₺");
+
+            cart.RemoveAt(index);
+            lbCart.Items.RemoveAt(index);
         }
 
 
