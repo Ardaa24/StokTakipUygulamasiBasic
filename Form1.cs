@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MarketStokTakipApp
 {
@@ -23,9 +24,79 @@ namespace MarketStokTakipApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             StyleDataGrid();
             LoadProducts();
+            LoadCategories();
+
         }
+
+        private void LoadCategories()
+        {
+            tvList.Nodes.Clear();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT ccode, cname FROM tblCategory", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    TreeNode node = new TreeNode(reader["cname"].ToString());
+                    node.Tag = reader["ccode"]; // ileride lazım olacak
+                    tvList.Nodes.Add(node);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Kategori Hatası");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+
+
+
+        private void LoadSubCategories(TreeNode parentNode, DataTable dt)
+        {
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row["ctype"].ToString().Trim().ToLower() == "alt" &&
+                    row["comment"].ToString() == parentNode.Tag.ToString())
+                {
+                    TreeNode sub = new TreeNode(row["cname"].ToString());
+                    sub.Tag = row["ccode"];
+                    parentNode.Nodes.Add(sub);
+                }
+            }
+        }
+
+
+        private void tvList_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(
+                "SELECT * FROM tblProduct WHERE tblCategory=@ccode", conn);
+            cmd.Parameters.AddWithValue("@ccode", e.Node.Tag);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+            conn.Close();
+        }
+
+
+
 
         private void LoadProducts()
         {
@@ -91,17 +162,7 @@ namespace MarketStokTakipApp
             Application.Exit();
         }
 
-        private void btnGroupAdd_Click(object sender, EventArgs e)
-        {
-            btnCloseTree.Visible = true;
-            tvList.Visible = true;
-        }
-
-        private void btnCloseTree_Click_1(object sender, EventArgs e)
-        {
-            tvList.Visible = false;
-            btnCloseTree.Visible = false;
-        }
+ 
         private void btnListAdd_Click(object sender, EventArgs e)
         {
          Add add = new Add();
@@ -114,9 +175,6 @@ namespace MarketStokTakipApp
             catalogAdd.ShowDialog();
         }
 
-        private void tvList_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
+       
     }
 }
