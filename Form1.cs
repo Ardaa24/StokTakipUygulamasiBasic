@@ -24,6 +24,7 @@ namespace MarketStokTakipApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            btnCloseTree.Visible= false;
 
             StyleDataGrid();
             LoadProducts();
@@ -204,5 +205,18 @@ namespace MarketStokTakipApp
                 conn.Close();
             }
         }
+
+        private void btnCategoryListe_Click(object sender, EventArgs e)
+        {
+            tvList.Visible = true;
+            btnCloseTree.Visible = true;
+        }
+        private void btnCloseTree_Click(object sender, EventArgs e)
+        {
+            tvList.Visible= false;
+            btnCloseTree.Visible= false;
+        }
+
+       
     }
 }

@@ -48,6 +48,8 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tvList = new System.Windows.Forms.TreeView();
+            this.btnCloseTree = new System.Windows.Forms.Button();
+            this.btnCategoryListe = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -58,6 +60,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnCategoryListe);
             this.panel1.Controls.Add(this.btnDoc);
             this.panel1.Controls.Add(this.btnCatalogAdd);
             this.panel1.Controls.Add(this.btnPlus);
@@ -77,7 +80,7 @@
             this.btnDoc.FlatAppearance.BorderSize = 0;
             this.btnDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDoc.Location = new System.Drawing.Point(1134, 6);
+            this.btnDoc.Location = new System.Drawing.Point(1162, 6);
             this.btnDoc.Name = "btnDoc";
             this.btnDoc.Size = new System.Drawing.Size(215, 34);
             this.btnDoc.TabIndex = 6;
@@ -90,7 +93,7 @@
             this.btnCatalogAdd.FlatAppearance.BorderSize = 0;
             this.btnCatalogAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCatalogAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCatalogAdd.Location = new System.Drawing.Point(433, 6);
+            this.btnCatalogAdd.Location = new System.Drawing.Point(461, 6);
             this.btnCatalogAdd.Name = "btnCatalogAdd";
             this.btnCatalogAdd.Size = new System.Drawing.Size(215, 34);
             this.btnCatalogAdd.TabIndex = 5;
@@ -104,7 +107,7 @@
             this.btnPlus.FlatAppearance.BorderSize = 0;
             this.btnPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPlus.Location = new System.Drawing.Point(901, 6);
+            this.btnPlus.Location = new System.Drawing.Point(929, 6);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(215, 34);
             this.btnPlus.TabIndex = 3;
@@ -126,7 +129,7 @@
             this.btnListAdd.FlatAppearance.BorderSize = 0;
             this.btnListAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListAdd.Location = new System.Drawing.Point(665, 6);
+            this.btnListAdd.Location = new System.Drawing.Point(693, 6);
             this.btnListAdd.Name = "btnListAdd";
             this.btnListAdd.Size = new System.Drawing.Size(215, 34);
             this.btnListAdd.TabIndex = 0;
@@ -278,13 +281,43 @@
             this.tvList.Name = "tvList";
             this.tvList.Size = new System.Drawing.Size(237, 679);
             this.tvList.TabIndex = 14;
+            this.tvList.Visible = false;
             this.tvList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvList_AfterSelect_1);
+            // 
+            // btnCloseTree
+            // 
+            this.btnCloseTree.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnCloseTree.FlatAppearance.BorderSize = 0;
+            this.btnCloseTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseTree.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCloseTree.Location = new System.Drawing.Point(0, 667);
+            this.btnCloseTree.Name = "btnCloseTree";
+            this.btnCloseTree.Size = new System.Drawing.Size(237, 34);
+            this.btnCloseTree.TabIndex = 15;
+            this.btnCloseTree.Text = "Kapat";
+            this.btnCloseTree.UseVisualStyleBackColor = false;
+            this.btnCloseTree.Click += new System.EventHandler(this.btnCloseTree_Click);
+            // 
+            // btnCategoryListe
+            // 
+            this.btnCategoryListe.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnCategoryListe.FlatAppearance.BorderSize = 0;
+            this.btnCategoryListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoryListe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCategoryListe.Location = new System.Drawing.Point(225, 5);
+            this.btnCategoryListe.Name = "btnCategoryListe";
+            this.btnCategoryListe.Size = new System.Drawing.Size(215, 34);
+            this.btnCategoryListe.TabIndex = 7;
+            this.btnCategoryListe.Text = "Kategori Ekle";
+            this.btnCategoryListe.UseVisualStyleBackColor = false;
+            this.btnCategoryListe.Click += new System.EventHandler(this.btnCategoryListe_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 724);
+            this.Controls.Add(this.btnCloseTree);
             this.Controls.Add(this.tvList);
             this.Controls.Add(this.pnlCost);
             this.Controls.Add(this.pictureBox1);
@@ -331,6 +364,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox lbCart;
         private System.Windows.Forms.TreeView tvList;
+        private System.Windows.Forms.Button btnCloseTree;
+        private System.Windows.Forms.Button btnCategoryListe;
     }
 }
 
