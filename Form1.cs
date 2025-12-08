@@ -57,7 +57,7 @@ namespace MarketStokTakipApp
                 while (reader.Read())
                 {
                     TreeNode node = new TreeNode(reader["cname"].ToString());
-                    node.Tag = reader["ccode"]; // ileride lazım olacak
+                    node.Tag = reader["ccode"]; 
                     tvList.Nodes.Add(node);
                 }
             }
@@ -303,7 +303,24 @@ namespace MarketStokTakipApp
             LoadProducts();
         }
 
-       
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            frmDoc doc = new frmDoc();
+            doc.ShowDialog();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            lbCart.Items.Clear();
+            lblTotal.Text = "0.00 ₺";
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+
 
         //private void Pd_PrintPage(object sender, PrintPageEventArgs e)
         //{
