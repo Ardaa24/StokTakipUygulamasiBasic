@@ -130,7 +130,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(339, 192);
+            this.label9.Location = new System.Drawing.Point(339, 246);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(118, 28);
             this.label9.TabIndex = 17;
@@ -138,7 +138,7 @@
             // 
             // txtPiece
             // 
-            this.txtPiece.Location = new System.Drawing.Point(334, 225);
+            this.txtPiece.Location = new System.Drawing.Point(334, 279);
             this.txtPiece.Name = "txtPiece";
             this.txtPiece.Size = new System.Drawing.Size(203, 34);
             this.txtPiece.TabIndex = 16;
@@ -146,7 +146,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(339, 88);
+            this.label8.Location = new System.Drawing.Point(339, 142);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(104, 28);
             this.label8.TabIndex = 15;
@@ -154,7 +154,7 @@
             // 
             // txtBrand
             // 
-            this.txtBrand.Location = new System.Drawing.Point(334, 119);
+            this.txtBrand.Location = new System.Drawing.Point(334, 173);
             this.txtBrand.Name = "txtBrand";
             this.txtBrand.Size = new System.Drawing.Size(203, 34);
             this.txtBrand.TabIndex = 14;
@@ -262,6 +262,7 @@
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBack
             // 

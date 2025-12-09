@@ -50,6 +50,24 @@ namespace StokTakip
             }
             
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblProduct (pcode,pname,categorycode,bname,number,bprice,sprice) " +
+                "VALUES (@pcode,@pname,@categorycode,@bname,@number,@bprice,@sprice)", conn);
+
+            cmd.Parameters.AddWithValue("@pcode", txtCode.Text);
+            cmd.Parameters.AddWithValue("@pname", txtName.Text);
+            cmd.Parameters.AddWithValue("@categorcode", cbCategory.SelectedIndex);
+            cmd.Parameters.AddWithValue("@bname", txtBrand.Text);
+            cmd.Parameters.AddWithValue("@number", txtPiece.Text);
+            cmd.Parameters.AddWithValue("@bprice", txtBuy.Text);
+            cmd.Parameters.AddWithValue("@sprice", txtSale.Text);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
     }
     }
 
