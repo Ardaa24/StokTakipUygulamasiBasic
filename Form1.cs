@@ -259,21 +259,27 @@ namespace MarketStokTakipApp
             //{
             //    pd.Print();
             //}
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(
-                "INSERT INTO tblSale (SaleDate, TotalAmount) VALUES (@SaleDate, @TotalAmount)",
-                conn);
-            cmd.Parameters.AddWithValue("@SaleDate", DateTime.Now);
-            cmd.Parameters.AddWithValue("@TotalAmount", total);
-            cmd.ExecuteNonQuery();
+            if (lbCart.Items.Count == 0)
+            {
+                MessageBox.Show("Lütfen önce ürün ekleyin.");
+            }
+            else {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "INSERT INTO tblSale (SaleDate, TotalAmount) VALUES (@SaleDate, @TotalAmount)",
+                    conn);
+                cmd.Parameters.AddWithValue("@SaleDate", DateTime.Now);
+                cmd.Parameters.AddWithValue("@TotalAmount", total);
+                cmd.ExecuteNonQuery();
 
-            conn.Close();
-            MessageBox.Show("Satış tamamlandı!", "Bilgi");
-            cartLines.Clear();
-            lbCart.Items.Clear();
-            total = 0;
-            lblTotal.Text = "0 ₺";
-            LoadProducts();
+                conn.Close();
+                MessageBox.Show("Satış tamamlandı!", "Bilgi");
+                cartLines.Clear();
+                lbCart.Items.Clear();
+                total = 0;
+                lblTotal.Text = "0 ₺";
+                LoadProducts();
+            }
         }
 
         class CartItem
