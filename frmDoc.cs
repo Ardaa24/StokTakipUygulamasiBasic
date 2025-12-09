@@ -16,5 +16,23 @@ namespace StokTakip
         {
             InitializeComponent();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmDoc_Load(object sender, EventArgs e)
+        {
+            pbDe.Enabled = false;
+            pbSafe.Enabled = false;
+            lblDe.Enabled = false;
+            lblSafe.Enabled = false;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -108,6 +108,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDoc.resx">
+      <DependentUpon>frmDoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -156,6 +159,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\logo-e-fatura-850x519.png" />
+    <None Include="Resources\fatura-arsivi.png" />
+    <None Include="Resources\1055644.png" />
+    <None Include="Resources\10920724.png" />
     <None Include="Resources\2832794.png" />
     <None Include="Resources\restart-icon-9.png" />
     <None Include="Resources\category.png" />
