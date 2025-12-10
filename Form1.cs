@@ -242,29 +242,61 @@ namespace MarketStokTakipApp
 
         private void btnSale_Click(object sender, EventArgs e)
         {
-            UpdateStock();
-            cart.Clear();
-            if (lbCart.Items.Count == 0)
+            if (cart.Count == 0)
             {
-                MessageBox.Show("Lütfen önce ürün ekleyin.");
+                MessageBox.Show("Sepet boş!");
+                return;
             }
-            else {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(
-                    "INSERT INTO tblSale (SaleDate, TotalAmount) VALUES (@SaleDate, @TotalAmount)",
-                    conn);
-                cmd.Parameters.AddWithValue("@SaleDate", DateTime.Now);
-                cmd.Parameters.AddWithValue("@TotalAmount", total);
-                cmd.ExecuteNonQuery();
 
-                conn.Close();
-                MessageBox.Show("Satış tamamlandı!", "Bilgi");
-                cartLines.Clear();
+            try
+            {
+                conn.Open();
+
+                // 1️⃣ Satış kaydı
+                SqlCommand cmdSale = new SqlCommand(
+                    "INSERT INTO tblSale (SaleDate, TotalAmount) OUTPUT INSERTED.SaleID VALUES (@d,@t)", conn);
+
+                cmdSale.Parameters.AddWithValue("@d", DateTime.Now);
+                cmdSale.Parameters.AddWithValue("@t", total);
+
+                int saleId = (int)cmdSale.ExecuteScalar();
+
+                // 2️⃣ Satış detayları
+                foreach (var item in cart)
+                {
+                    SqlCommand cmdDetail = new SqlCommand(
+                        "INSERT INTO tblSaleDetail (SaleID, ProductCode, ProductName, Quantity, UnitPrice) " +
+                        "VALUES (@sid,@code,@name,@qty,@price)", conn);
+
+                    cmdDetail.Parameters.AddWithValue("@sid", saleId);
+                    cmdDetail.Parameters.AddWithValue("@code", item.ProductCode);
+                    cmdDetail.Parameters.AddWithValue("@name", item.ProductName);
+                    cmdDetail.Parameters.AddWithValue("@qty", item.Quantity);
+                    cmdDetail.Parameters.AddWithValue("@price", item.Price);
+
+                    cmdDetail.ExecuteNonQuery();
+                }
+
+                // 3️⃣ Stok düş
+                UpdateStock();
+
+                MessageBox.Show("Satış başarıyla tamamlandı ✅");
+
+                // 4️⃣ Sepeti temizle
+                cart.Clear();
                 lbCart.Items.Clear();
                 total = 0;
-                lblTotal.Text = "0 ₺";
-                LoadProducts();
+                lblTotal.Text = "0.00 ₺";
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Satış hatası: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
 
         class CartItem
@@ -277,7 +309,6 @@ namespace MarketStokTakipApp
         List<CartItem> cart = new List<CartItem>();
         private void UpdateStock()
         {
-            conn.Open();
 
             foreach (var item in cart)
             {
@@ -291,7 +322,6 @@ namespace MarketStokTakipApp
                 cmd.ExecuteNonQuery();
             }
 
-            conn.Close();
         }
 
         private void btnRestart_Click(object sender, EventArgs e)
@@ -440,25 +470,36 @@ namespace MarketStokTakipApp
                     AddHeader("Birim Fiyat");
                     AddHeader("Tutar");
 
-                    if (cart == null || cart.Count == 0)
+                    using (var c = new SqlConnection(conn.ConnectionString))
                     {
-                        productTable.AddCell(new iTextSharp.text.Phrase("-", normalFont));
-                        productTable.AddCell(new iTextSharp.text.Phrase("Örnek Ürün", normalFont));
-                        productTable.AddCell(new iTextSharp.text.Phrase("1", normalFont) { });
-                        productTable.AddCell(new iTextSharp.text.Phrase("0.00", normalFont));
-                        productTable.AddCell(new iTextSharp.text.Phrase("0.00", normalFont));
-                    }
-                    else
-                    {
-                        foreach (var it in cart)
+                        c.Open();
+
+                        using (var cmd = new SqlCommand(
+                            "SELECT ProductCode, ProductName, Quantity, UnitPrice " +
+                            "FROM tblSaleDetail WHERE SaleID = @SaleID", c))
                         {
-                            productTable.AddCell(new iTextSharp.text.Phrase(it.ProductCode ?? string.Empty, normalFont));
-                            productTable.AddCell(new iTextSharp.text.Phrase(it.ProductName ?? string.Empty, normalFont));
-                            productTable.AddCell(new iTextSharp.text.Phrase(it.Quantity.ToString(), normalFont) { });
-                            productTable.AddCell(new iTextSharp.text.Phrase(it.Price.ToString("0.00"), normalFont) { });
-                            productTable.AddCell(new iTextSharp.text.Phrase((it.Price * it.Quantity).ToString("0.00"), normalFont) { });
+                            cmd.Parameters.AddWithValue("@SaleID", saleId);
+
+                            using (var dr = cmd.ExecuteReader())
+                            {
+                                while (dr.Read())
+                                {
+                                    string code = dr["ProductCode"].ToString();
+                                    string name = dr["ProductName"].ToString();
+                                    int qty = Convert.ToInt32(dr["Quantity"]);
+                                    decimal price = Convert.ToDecimal(dr["UnitPrice"]);
+                                    decimal lineTotal = qty * price;
+
+                                    productTable.AddCell(new Phrase(code, normalFont));
+                                    productTable.AddCell(new Phrase(name, normalFont));
+                                    productTable.AddCell(new Phrase(qty.ToString(), normalFont));
+                                    productTable.AddCell(new Phrase(price.ToString("0.00"), normalFont));
+                                    productTable.AddCell(new Phrase(lineTotal.ToString("0.00"), normalFont));
+                                }
+                            }
                         }
                     }
+
 
                     document.Add(productTable);
                     document.Add(new iTextSharp.text.Paragraph("\n"));
