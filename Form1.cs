@@ -415,7 +415,7 @@ namespace MarketStokTakipApp
 
                     var leftCell = new iTextSharp.text.pdf.PdfPCell();
                     leftCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
-                    leftCell.AddElement(new iTextSharp.text.Paragraph("ANAVATAN BİLGİSAYAR A.S.", headerFont));
+                    leftCell.AddElement(new iTextSharp.text.Paragraph("ANAVATAN BILGISAYAR A.S.", headerFont));
                     leftCell.AddElement(new iTextSharp.text.Paragraph("Merkez: Mersin. ...", normalFont));
                     leftCell.AddElement(new iTextSharp.text.Paragraph("Vergi No: 6320036072", normalFont));
                     headerTable.AddCell(leftCell);
@@ -423,7 +423,7 @@ namespace MarketStokTakipApp
                     var rightCell = new iTextSharp.text.pdf.PdfPCell();
                     rightCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
                     rightCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
-                    rightCell.AddElement(new iTextSharp.text.Paragraph("e-ARŞİV FATURA", headerFont));
+                    rightCell.AddElement(new iTextSharp.text.Paragraph("e-ARSIV FATURA", headerFont));
                     rightCell.AddElement(new iTextSharp.text.Paragraph($"Fatura No: {saleId}", normalFont));
                     rightCell.AddElement(new iTextSharp.text.Paragraph($"Tarih: {saleDate:dd.MM.yyyy HH:mm}", normalFont));
                     headerTable.AddCell(rightCell);
@@ -433,14 +433,14 @@ namespace MarketStokTakipApp
 
                     var infoTable = new iTextSharp.text.pdf.PdfPTable(2) { WidthPercentage = 100f };
                     infoTable.SetWidths(new float[] { 55f, 45f });
-                    var buyer = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase("Alıcı:\nAd Soyad\nAdres\nTelefon", normalFont))
+                    var buyer = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase("Alici:\nAd Soyad\nAdres\nTelefon", normalFont))
                     {
                         Border = iTextSharp.text.Rectangle.NO_BORDER
                     };
                     infoTable.AddCell(buyer);
 
                     var invoiceInfo = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase(
-                        $"İrsaliye / Bilgi:\nFatura No: {saleId}\nTarih: {saleDate:dd.MM.yyyy}\nSaat: {saleDate:HH:mm}", normalFont))
+                        $"Irsaliye / Bilgi:\nFatura No: {saleId}\nTarih: {saleDate:dd.MM.yyyy}\nSaat: {saleDate:HH:mm}", normalFont))
                     {
                         Border = iTextSharp.text.Rectangle.NO_BORDER,
                         HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT
@@ -533,7 +533,7 @@ namespace MarketStokTakipApp
                     document.Add(totalsTable);
                     document.Add(new iTextSharp.text.Paragraph("\n"));
 
-                    var note = new iTextSharp.text.Paragraph("Bu belge elektronik ortamda üretilmiştir. İrsaliye yerine geçer.", normalFont);
+                    var note = new iTextSharp.text.Paragraph("Bu belge elektronik ortamda üretilmistir. Irsaliye yerine geçer. Anavatan Group A.S", normalFont);
                     document.Add(note);
 
                     document.Close();
@@ -553,11 +553,11 @@ namespace MarketStokTakipApp
                 {
                 }
 
-                MessageBox.Show("PDF fatura oluşturuldu:\n" + filePath, "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("PDF fatura olusturuldu:\n" + filePath, "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("PDF oluşturulurken hata: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("PDF olusturulurken hata: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
