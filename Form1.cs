@@ -35,13 +35,13 @@ namespace MarketStokTakipApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnCloseTree.Visible= false;
+            btnCloseTree.Visible = false;
 
             StyleDataGrid();
             LoadProducts();
             LoadCategories();
             lblTotal.Text = "0.00 ₺";
-            total= 0; 
+            total = 0;
 
         }
 
@@ -60,7 +60,7 @@ namespace MarketStokTakipApp
                 while (reader.Read())
                 {
                     TreeNode node = new TreeNode(reader["cname"].ToString());
-                    node.Tag = reader["ccode"]; 
+                    node.Tag = reader["ccode"];
                     tvList.Nodes.Add(node);
                 }
             }
@@ -204,8 +204,8 @@ namespace MarketStokTakipApp
         }
         private void btnCloseTree_Click(object sender, EventArgs e)
         {
-            tvList.Visible= false;
-            btnCloseTree.Visible= false;
+            tvList.Visible = false;
+            btnCloseTree.Visible = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -304,6 +304,11 @@ namespace MarketStokTakipApp
             CreateLastSalePdf();
         }
 
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            frmStock stock = new frmStock();
+            stock.ShowDialog();
+        }
         private void btnClear_Click(object sender, EventArgs e)
         {
             lbCart.Items.Clear();
@@ -331,79 +336,191 @@ namespace MarketStokTakipApp
 
         private void CreateLastSalePdf()
         {
-            int saleId = 0;
-            DateTime saleDate = DateTime.Now;
-            decimal saleTotal = 0;
-
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(
-                "SELECT TOP 1 SaleID, SaleDate, TotalAmount FROM tblSale ORDER BY SaleID DESC",
-                conn);
-
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                saleId = Convert.ToInt32(dr["SaleID"]);
-                saleDate = Convert.ToDateTime(dr["SaleDate"]);
-                saleTotal = Convert.ToDecimal(dr["TotalAmount"]);
-            }
-            dr.Close();
-            conn.Close();
+                int saleId = 0;
+                DateTime saleDate = DateTime.Now;
+                decimal saleTotal = 0m;
 
-            if (saleId == 0)
+                using (var c = new System.Data.SqlClient.SqlConnection(conn.ConnectionString))
+                {
+                    c.Open();
+                    using (var cmd = new System.Data.SqlClient.SqlCommand(
+                        "SELECT TOP 1 SaleID, SaleDate, TotalAmount FROM tblSale ORDER BY SaleID DESC", c))
+                    {
+                        using (var dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                saleId = Convert.ToInt32(dr["SaleID"]);
+                                saleDate = Convert.ToDateTime(dr["SaleDate"]);
+                                saleTotal = Convert.ToDecimal(dr["TotalAmount"]);
+                            }
+                        }
+                    }
+                }
+
+                if (saleId == 0)
+                {
+                    MessageBox.Show("Yazdırılacak satış bulunamadı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                string filePath = System.IO.Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                    $"Fatura_{saleId}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf");
+
+                using (var fs = new System.IO.FileStream(filePath, System.IO.FileMode.Create, System.IO.FileAccess.Write))
+                {
+                    var document = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4, 36f, 36f, 36f, 36f);
+                    var writer = iTextSharp.text.pdf.PdfWriter.GetInstance(document, fs);
+                    document.Open();
+
+                    var titleFont = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_BOLD, 14);
+                    var headerFont = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_BOLD, 10);
+                    var normalFont = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA, 9);
+
+                    var headerTable = new iTextSharp.text.pdf.PdfPTable(2) { WidthPercentage = 100f };
+                    headerTable.SetWidths(new float[] { 65f, 35f });
+
+                    var leftCell = new iTextSharp.text.pdf.PdfPCell();
+                    leftCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                    leftCell.AddElement(new iTextSharp.text.Paragraph("ANAVATAN BİLGİSAYAR A.S.", headerFont));
+                    leftCell.AddElement(new iTextSharp.text.Paragraph("Merkez: Mersin. ...", normalFont));
+                    leftCell.AddElement(new iTextSharp.text.Paragraph("Vergi No: 6320036072", normalFont));
+                    headerTable.AddCell(leftCell);
+
+                    var rightCell = new iTextSharp.text.pdf.PdfPCell();
+                    rightCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                    rightCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
+                    rightCell.AddElement(new iTextSharp.text.Paragraph("e-ARŞİV FATURA", headerFont));
+                    rightCell.AddElement(new iTextSharp.text.Paragraph($"Fatura No: {saleId}", normalFont));
+                    rightCell.AddElement(new iTextSharp.text.Paragraph($"Tarih: {saleDate:dd.MM.yyyy HH:mm}", normalFont));
+                    headerTable.AddCell(rightCell);
+
+                    document.Add(headerTable);
+                    document.Add(new iTextSharp.text.Paragraph("\n"));
+
+                    var infoTable = new iTextSharp.text.pdf.PdfPTable(2) { WidthPercentage = 100f };
+                    infoTable.SetWidths(new float[] { 55f, 45f });
+                    var buyer = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase("Alıcı:\nAd Soyad\nAdres\nTelefon", normalFont))
+                    {
+                        Border = iTextSharp.text.Rectangle.NO_BORDER
+                    };
+                    infoTable.AddCell(buyer);
+
+                    var invoiceInfo = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase(
+                        $"İrsaliye / Bilgi:\nFatura No: {saleId}\nTarih: {saleDate:dd.MM.yyyy}\nSaat: {saleDate:HH:mm}", normalFont))
+                    {
+                        Border = iTextSharp.text.Rectangle.NO_BORDER,
+                        HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT
+                    };
+                    infoTable.AddCell(invoiceInfo);
+
+                    document.Add(infoTable);
+                    document.Add(new iTextSharp.text.Paragraph("\n"));
+
+                    var productTable = new iTextSharp.text.pdf.PdfPTable(5) { WidthPercentage = 100f };
+                    productTable.SetWidths(new float[] { 12f, 46f, 10f, 16f, 16f });
+
+                    void AddHeader(string txt)
+                    {
+                        var cell = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase(txt, headerFont))
+                        {
+                            BackgroundColor = iTextSharp.text.BaseColor.LIGHT_GRAY,
+                            HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER,
+                            Padding = 4
+                        };
+                        productTable.AddCell(cell);
+                    }
+
+                    AddHeader("Mal No");
+                    AddHeader("Açıklama");
+                    AddHeader("Miktar");
+                    AddHeader("Birim Fiyat");
+                    AddHeader("Tutar");
+
+                    if (cart == null || cart.Count == 0)
+                    {
+                        productTable.AddCell(new iTextSharp.text.Phrase("-", normalFont));
+                        productTable.AddCell(new iTextSharp.text.Phrase("Örnek Ürün", normalFont));
+                        productTable.AddCell(new iTextSharp.text.Phrase("1", normalFont) { });
+                        productTable.AddCell(new iTextSharp.text.Phrase("0.00", normalFont));
+                        productTable.AddCell(new iTextSharp.text.Phrase("0.00", normalFont));
+                    }
+                    else
+                    {
+                        foreach (var it in cart)
+                        {
+                            productTable.AddCell(new iTextSharp.text.Phrase(it.ProductCode ?? string.Empty, normalFont));
+                            productTable.AddCell(new iTextSharp.text.Phrase(it.ProductName ?? string.Empty, normalFont));
+                            productTable.AddCell(new iTextSharp.text.Phrase(it.Quantity.ToString(), normalFont) { });
+                            productTable.AddCell(new iTextSharp.text.Phrase(it.Price.ToString("0.00"), normalFont) { });
+                            productTable.AddCell(new iTextSharp.text.Phrase((it.Price * it.Quantity).ToString("0.00"), normalFont) { });
+                        }
+                    }
+
+                    document.Add(productTable);
+                    document.Add(new iTextSharp.text.Paragraph("\n"));
+
+                    var totalsTable = new iTextSharp.text.pdf.PdfPTable(2)
+                    {
+                        HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT,
+                        WidthPercentage = 40f
+                    };
+
+                    iTextSharp.text.pdf.PdfPCell MakeTotalCell(string txt, iTextSharp.text.Font f, bool borderless = true, int align = iTextSharp.text.Element.ALIGN_RIGHT)
+                    {
+                        return new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase(txt, f))
+                        {
+                            Border = borderless ? iTextSharp.text.Rectangle.NO_BORDER : iTextSharp.text.Rectangle.BOX,
+                            HorizontalAlignment = align,
+                            Padding = 2
+                        };
+                    }
+
+                    totalsTable.AddCell(MakeTotalCell("Ara Toplam", normalFont));
+                    totalsTable.AddCell(MakeTotalCell(saleTotal.ToString("0.00") + " ₺", normalFont));
+
+                    decimal kdv = Math.Round(saleTotal * 0.20m, 2);
+                    totalsTable.AddCell(MakeTotalCell("KDV (%20)", normalFont));
+                    totalsTable.AddCell(MakeTotalCell(kdv.ToString("0.00") + " ₺", normalFont));
+
+                    totalsTable.AddCell(MakeTotalCell("Ödenecek Toplam", headerFont));
+                    totalsTable.AddCell(MakeTotalCell((saleTotal + kdv).ToString("0.00") + " ₺", headerFont));
+
+                    document.Add(totalsTable);
+                    document.Add(new iTextSharp.text.Paragraph("\n"));
+
+                    var note = new iTextSharp.text.Paragraph("Bu belge elektronik ortamda üretilmiştir. İrsaliye yerine geçer.", normalFont);
+                    document.Add(note);
+
+                    document.Close();
+                    writer.Close();
+                    fs.Close();
+                }
+
+                try
+                {
+                    var psi = new ProcessStartInfo(filePath)
+                    {
+                        UseShellExecute = true
+                    };
+                    Process.Start(psi);
+                }
+                catch
+                {
+                }
+
+                MessageBox.Show("PDF fatura oluşturuldu:\n" + filePath, "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Yazdırılacak satış bulunamadı.");
-                return;
+                MessageBox.Show("PDF oluşturulurken hata: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            string filePath = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                $"Fis_{saleId}.pdf");
-
-            iTextSharp.text.Document document =
-                new iTextSharp.text.Document(iTextSharp.text.PageSize.A6);
-
-            iTextSharp.text.pdf.PdfWriter.GetInstance(
-                document, new FileStream(filePath, FileMode.Create));
-
-            document.Open();
-
-            iTextSharp.text.Font titleFont =
-                iTextSharp.text.FontFactory.GetFont(
-                    iTextSharp.text.FontFactory.HELVETICA_BOLD, 14);
-
-            iTextSharp.text.Font normalFont =
-                iTextSharp.text.FontFactory.GetFont(
-                    iTextSharp.text.FontFactory.HELVETICA, 10);
-
-            document.Add(new iTextSharp.text.Paragraph("ANAVATAN TEKNOLOJi A.S FISI\n", titleFont));
-            document.Add(new iTextSharp.text.Paragraph($"Fiş No : {saleId}", normalFont));
-            document.Add(new iTextSharp.text.Paragraph($"Tarih  : {saleDate}", normalFont));
-            document.Add(new iTextSharp.text.Paragraph("----------------------------", normalFont));
-
-            foreach (var item in cart)
-            {
-                document.Add(new iTextSharp.text.Paragraph(
-                    $"{item.ProductName} x{item.Quantity}  {item.Price * item.Quantity:0.00} ₺",
-                    normalFont));
-            }
-
-            document.Add(new iTextSharp.text.Paragraph("----------------------------", normalFont));
-            document.Add(new iTextSharp.text.Paragraph(
-                $"TOPLAM : {saleTotal:0.00} ₺", titleFont));
-
-            document.Close();
-
-            MessageBox.Show("PDF fiş oluşturuldu.\n\n" + filePath, "Bilgi");
-            Process.Start(filePath);
         }
 
-        private void btnPlus_Click(object sender, EventArgs e)
-        {
-            frmStock stock = new frmStock();
-            stock.ShowDialog();
-        }
+       
     }
-
 
 }

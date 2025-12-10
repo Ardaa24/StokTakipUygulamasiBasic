@@ -43,6 +43,8 @@
             this.btnSrc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlCost = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lbCart = new System.Windows.Forms.ListBox();
@@ -52,16 +54,14 @@
             this.btnCloseTree = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.btnRestart = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSale = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlCost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,6 +252,26 @@
             this.pnlCost.Size = new System.Drawing.Size(318, 617);
             this.pnlCost.TabIndex = 13;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(118, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 46);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "SEPET";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.MediumPurple;
@@ -359,16 +379,6 @@
             this.btnRestart.TabStop = false;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnSale
             // 
             this.btnSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -380,16 +390,6 @@
             this.btnSale.TabIndex = 12;
             this.btnSale.TabStop = false;
             this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(118, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 46);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "SEPET";
             // 
             // Form1
             // 
@@ -418,9 +418,9 @@
             this.groupBox1.PerformLayout();
             this.pnlCost.ResumeLayout(false);
             this.pnlCost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
             this.ResumeLayout(false);
 
