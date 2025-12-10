@@ -31,6 +31,7 @@ namespace StokTakip
 
         private void Add_Load(object sender, EventArgs e)
         {
+            getInfo();
             Random rdm = new Random();
             string set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             string code = "";
@@ -59,7 +60,7 @@ namespace StokTakip
 
             cmd.Parameters.AddWithValue("@pcode", txtCode.Text);
             cmd.Parameters.AddWithValue("@pname", txtName.Text);
-            cmd.Parameters.AddWithValue("@categorcode", cbCategory.SelectedIndex);
+            cmd.Parameters.AddWithValue("@categorycode", cbCategory.SelectedIndex);
             cmd.Parameters.AddWithValue("@bname", txtBrand.Text);
             cmd.Parameters.AddWithValue("@number", txtPiece.Text);
             cmd.Parameters.AddWithValue("@bprice", txtBuy.Text);
@@ -67,6 +68,19 @@ namespace StokTakip
             cmd.ExecuteNonQuery();
             conn.Close();
 
+        }
+
+        void getInfo()
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tblCategory", conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                cbCategory.Items.Add(reader["cname"].ToString().Trim());
+            }
+            reader.Close();
+            conn.Close();
         }
     }
     }
