@@ -335,7 +335,6 @@ namespace MarketStokTakipApp
             DateTime saleDate = DateTime.Now;
             decimal saleTotal = 0;
 
-            // Son satışı al
             conn.Open();
             SqlCommand cmd = new SqlCommand(
                 "SELECT TOP 1 SaleID, SaleDate, TotalAmount FROM tblSale ORDER BY SaleID DESC",
@@ -361,7 +360,6 @@ namespace MarketStokTakipApp
                 Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
                 $"Fis_{saleId}.pdf");
 
-            // PDF oluştur
             iTextSharp.text.Document document =
                 new iTextSharp.text.Document(iTextSharp.text.PageSize.A6);
 
@@ -370,7 +368,6 @@ namespace MarketStokTakipApp
 
             document.Open();
 
-            // ✅ ÇAKIŞMASIZ FONT TANIMLARI
             iTextSharp.text.Font titleFont =
                 iTextSharp.text.FontFactory.GetFont(
                     iTextSharp.text.FontFactory.HELVETICA_BOLD, 14);
@@ -379,7 +376,7 @@ namespace MarketStokTakipApp
                 iTextSharp.text.FontFactory.GetFont(
                     iTextSharp.text.FontFactory.HELVETICA, 10);
 
-            document.Add(new iTextSharp.text.Paragraph("MARKET FİŞİ\n", titleFont));
+            document.Add(new iTextSharp.text.Paragraph("ANAVATAN TEKNOLOJi A.S FISI\n", titleFont));
             document.Add(new iTextSharp.text.Paragraph($"Fiş No : {saleId}", normalFont));
             document.Add(new iTextSharp.text.Paragraph($"Tarih  : {saleDate}", normalFont));
             document.Add(new iTextSharp.text.Paragraph("----------------------------", normalFont));
