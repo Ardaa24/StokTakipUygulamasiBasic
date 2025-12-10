@@ -1,10 +1,13 @@
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\StokTakip.exe.config
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\StokTakip.exe
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\StokTakip.pdb
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\EntityFramework.dll
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\itextsharp.dll
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\EntityFramework.xml
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\bin\Debug\itextsharp.xml
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.csproj.AssemblyReference.cache
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.Add.resources
 C:\Users\ardac\OneDrive\Masaüstü\Projeler\StokTakip\StokTakip\obj\Debug\StokTakip.CatalogAdd.resources

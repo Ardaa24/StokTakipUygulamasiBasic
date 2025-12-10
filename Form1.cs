@@ -7,13 +7,16 @@ using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
+
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace MarketStokTakipApp
 {
@@ -114,40 +117,34 @@ namespace MarketStokTakipApp
 
         private void StyleDataGrid()
         {
-
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.GridColor = Color.FromArgb(230, 230, 230);
 
-
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 235, 243);
             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
 
+            dataGridView1.DefaultCellStyle.Font =
+                new System.Drawing.Font("Segoe UI", 11);
 
-            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 11);
             dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView1.RowTemplate.Height = 40;
 
-
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(242, 242, 242);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(242, 242, 242);
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.FromArgb(50, 50, 50);
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font =
+                new System.Drawing.Font("Segoe UI", 11, FontStyle.Bold);
+
+            dataGridView1.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
             dataGridView1.ColumnHeadersHeight = 45;
-
-
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-
-
-            dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
-
-
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
-            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -247,18 +244,6 @@ namespace MarketStokTakipApp
         {
             UpdateStock();
             cart.Clear();
-            //PrintDocument pd = new PrintDocument();
-
-            //pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";
-            //pd.PrintPage += Pd_PrintPage;
-
-            //PrintDialog dlg = new PrintDialog();
-            //dlg.Document = pd;
-
-            //if (dlg.ShowDialog() == DialogResult.OK)
-            //{
-            //    pd.Print();
-            //}
             if (lbCart.Items.Count == 0)
             {
                 MessageBox.Show("Lütfen önce ürün ekleyin.");
@@ -316,7 +301,7 @@ namespace MarketStokTakipApp
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-           //
+            CreateLastSalePdf();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -344,32 +329,79 @@ namespace MarketStokTakipApp
             lbCart.Items.RemoveAt(index);
         }
 
+        private void CreateLastSalePdf()
+        {
+            int saleId = 0;
+            DateTime saleDate = DateTime.Now;
+            decimal saleTotal = 0;
+
+            // Son satışı al
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(
+                "SELECT TOP 1 SaleID, SaleDate, TotalAmount FROM tblSale ORDER BY SaleID DESC",
+                conn);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                saleId = Convert.ToInt32(dr["SaleID"]);
+                saleDate = Convert.ToDateTime(dr["SaleDate"]);
+                saleTotal = Convert.ToDecimal(dr["TotalAmount"]);
+            }
+            dr.Close();
+            conn.Close();
+
+            if (saleId == 0)
+            {
+                MessageBox.Show("Yazdırılacak satış bulunamadı.");
+                return;
+            }
+
+            string filePath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                $"Fis_{saleId}.pdf");
+
+            // PDF oluştur
+            iTextSharp.text.Document document =
+                new iTextSharp.text.Document(iTextSharp.text.PageSize.A6);
+
+            iTextSharp.text.pdf.PdfWriter.GetInstance(
+                document, new FileStream(filePath, FileMode.Create));
+
+            document.Open();
+
+            // ✅ ÇAKIŞMASIZ FONT TANIMLARI
+            iTextSharp.text.Font titleFont =
+                iTextSharp.text.FontFactory.GetFont(
+                    iTextSharp.text.FontFactory.HELVETICA_BOLD, 14);
+
+            iTextSharp.text.Font normalFont =
+                iTextSharp.text.FontFactory.GetFont(
+                    iTextSharp.text.FontFactory.HELVETICA, 10);
+
+            document.Add(new iTextSharp.text.Paragraph("MARKET FİŞİ\n", titleFont));
+            document.Add(new iTextSharp.text.Paragraph($"Fiş No : {saleId}", normalFont));
+            document.Add(new iTextSharp.text.Paragraph($"Tarih  : {saleDate}", normalFont));
+            document.Add(new iTextSharp.text.Paragraph("----------------------------", normalFont));
+
+            foreach (var item in cart)
+            {
+                document.Add(new iTextSharp.text.Paragraph(
+                    $"{item.ProductName} x{item.Quantity}  {item.Price * item.Quantity:0.00} ₺",
+                    normalFont));
+            }
+
+            document.Add(new iTextSharp.text.Paragraph("----------------------------", normalFont));
+            document.Add(new iTextSharp.text.Paragraph(
+                $"TOPLAM : {saleTotal:0.00} ₺", titleFont));
+
+            document.Close();
+
+            MessageBox.Show("PDF fiş oluşturuldu.\n\n" + filePath, "Bilgi");
+            Process.Start(filePath);
+        }
 
 
-        //private void Pd_PrintPage(object sender, PrintPageEventArgs e)
-        //{
-        //    float y = 20;
-        //    Font title = new Font("Arial", 14, FontStyle.Bold);
-        //    Font normal = new Font("Arial", 10);
-
-        //    e.Graphics.DrawString("MARKET FİŞİ", title, Brushes.Black, 80, y);
-        //    y += 30;
-
-        //    e.Graphics.DrawString(DateTime.Now.ToString(), normal, Brushes.Black, 10, y);
-        //    y += 30;
-
-        //    foreach (string line in cartLines)
-        //    {
-        //        e.Graphics.DrawString(line, normal, Brushes.Black, 10, y);
-        //        y += 20;
-        //    }
-
-        //    y += 10;
-        //    e.Graphics.DrawLine(Pens.Black, 10, y, 200, y);
-        //    y += 10;
-
-        //    e.Graphics.DrawString("TOPLAM: " + total.ToString("0.00 ₺"), title, Brushes.Black, 10, y);
-        //}
     }
 
 
