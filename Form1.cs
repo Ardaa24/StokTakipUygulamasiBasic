@@ -316,8 +316,7 @@ namespace MarketStokTakipApp
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            frmDoc doc = new frmDoc();
-            doc.ShowDialog();
+           //
         }
 
         private void btnClear_Click(object sender, EventArgs e)
