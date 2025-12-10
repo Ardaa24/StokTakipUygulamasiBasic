@@ -52,13 +52,16 @@
             this.btnCloseTree = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.btnRestart = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSale = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlCost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +88,7 @@
             this.btnCategoryListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategoryListe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCategoryListe.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCategoryListe.Location = new System.Drawing.Point(367, 4);
+            this.btnCategoryListe.Location = new System.Drawing.Point(360, 3);
             this.btnCategoryListe.Name = "btnCategoryListe";
             this.btnCategoryListe.Size = new System.Drawing.Size(215, 34);
             this.btnCategoryListe.TabIndex = 7;
@@ -121,6 +124,7 @@
             this.btnPlus.TabIndex = 3;
             this.btnPlus.Text = "Stok Görüntüle";
             this.btnPlus.UseVisualStyleBackColor = false;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // panel3
             // 
@@ -236,14 +240,16 @@
             // 
             // pnlCost
             // 
+            this.pnlCost.Controls.Add(this.label4);
+            this.pnlCost.Controls.Add(this.pictureBox1);
             this.pnlCost.Controls.Add(this.btnDelete);
             this.pnlCost.Controls.Add(this.btnClear);
             this.pnlCost.Controls.Add(this.lbCart);
             this.pnlCost.Controls.Add(this.lblTotal);
             this.pnlCost.Controls.Add(this.label3);
-            this.pnlCost.Location = new System.Drawing.Point(1115, 87);
+            this.pnlCost.Location = new System.Drawing.Point(1119, 95);
             this.pnlCost.Name = "pnlCost";
-            this.pnlCost.Size = new System.Drawing.Size(322, 625);
+            this.pnlCost.Size = new System.Drawing.Size(318, 617);
             this.pnlCost.TabIndex = 13;
             // 
             // btnDelete
@@ -278,9 +284,9 @@
             // 
             this.lbCart.FormattingEnabled = true;
             this.lbCart.ItemHeight = 28;
-            this.lbCart.Location = new System.Drawing.Point(14, 17);
+            this.lbCart.Location = new System.Drawing.Point(14, 60);
             this.lbCart.Name = "lbCart";
-            this.lbCart.Size = new System.Drawing.Size(295, 564);
+            this.lbCart.Size = new System.Drawing.Size(295, 480);
             this.lbCart.TabIndex = 3;
             // 
             // lblTotal
@@ -353,6 +359,16 @@
             this.btnRestart.TabStop = false;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnSale
             // 
             this.btnSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -364,6 +380,16 @@
             this.btnSale.TabIndex = 12;
             this.btnSale.TabStop = false;
             this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(118, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 46);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "SEPET";
             // 
             // Form1
             // 
@@ -394,6 +420,7 @@
             this.pnlCost.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
             this.ResumeLayout(false);
 
@@ -426,6 +453,8 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
         public System.Windows.Forms.TreeView tvList;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
     }
 }
 

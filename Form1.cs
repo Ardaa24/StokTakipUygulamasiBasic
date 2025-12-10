@@ -401,7 +401,11 @@ namespace MarketStokTakipApp
             Process.Start(filePath);
         }
 
-
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            frmStock stock = new frmStock();
+            stock.ShowDialog();
+        }
     }
 
 
