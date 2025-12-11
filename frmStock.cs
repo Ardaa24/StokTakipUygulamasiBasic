@@ -26,11 +26,32 @@ namespace StokTakip
             this.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void frmStock_Load(object sender, EventArgs e)
         {
-
+            LoadProducts();
         }
 
-       
+        private void LoadProducts()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM tblProduct", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "HATA");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+     
     }
 }
