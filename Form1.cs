@@ -252,7 +252,6 @@ namespace MarketStokTakipApp
             {
                 conn.Open();
 
-                // 1️⃣ Satış kaydı
                 SqlCommand cmdSale = new SqlCommand(
                     "INSERT INTO tblSale (SaleDate, TotalAmount) OUTPUT INSERTED.SaleID VALUES (@d,@t)", conn);
 
@@ -261,7 +260,6 @@ namespace MarketStokTakipApp
 
                 int saleId = (int)cmdSale.ExecuteScalar();
 
-                // 2️⃣ Satış detayları
                 foreach (var item in cart)
                 {
                     SqlCommand cmdDetail = new SqlCommand(
@@ -277,12 +275,10 @@ namespace MarketStokTakipApp
                     cmdDetail.ExecuteNonQuery();
                 }
 
-                // 3️⃣ Stok düş
                 UpdateStock();
 
                 MessageBox.Show("Satış başarıyla tamamlandı ✅");
 
-                // 4️⃣ Sepeti temizle
                 cart.Clear();
                 lbCart.Items.Clear();
                 total = 0;
