@@ -223,6 +223,7 @@
             this.btnSrc.TabIndex = 10;
             this.btnSrc.Text = "Listele";
             this.btnSrc.UseVisualStyleBackColor = false;
+            this.btnSrc.Click += new System.EventHandler(this.btnSrc_Click);
             // 
             // groupBox1
             // 

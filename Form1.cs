@@ -557,7 +557,18 @@ namespace MarketStokTakipApp
             }
         }
 
-       
+        private void btnSrc_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(
+                "SELECT * FROM tblProduct WHERE pcode LIKE @pcode", conn);
+            cmd.Parameters.AddWithValue("@pcode", "%" + txtbarcod.Text + "%");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            conn.Close();
+        }
     }
 
 }

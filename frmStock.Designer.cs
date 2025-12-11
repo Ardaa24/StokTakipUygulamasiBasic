@@ -46,7 +46,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1261, 0);
+            this.btnClose.Location = new System.Drawing.Point(1390, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(52, 39);
@@ -65,7 +65,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1313, 39);
+            this.panel1.Size = new System.Drawing.Size(1442, 39);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -92,16 +92,16 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 62);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 62);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(868, 612);
+            this.dataGridView1.Size = new System.Drawing.Size(1061, 612);
             this.dataGridView1.TabIndex = 6;
             // 
             // pnlProductControl
             // 
-            this.pnlProductControl.Location = new System.Drawing.Point(954, 62);
+            this.pnlProductControl.Location = new System.Drawing.Point(1094, 62);
             this.pnlProductControl.Name = "pnlProductControl";
             this.pnlProductControl.Size = new System.Drawing.Size(336, 612);
             this.pnlProductControl.TabIndex = 7;
@@ -111,7 +111,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1313, 702);
+            this.ClientSize = new System.Drawing.Size(1442, 702);
             this.Controls.Add(this.pnlProductControl);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
