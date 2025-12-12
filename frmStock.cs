@@ -52,6 +52,6 @@ namespace StokTakip
             }
         }
 
-     
+
     }
 }
