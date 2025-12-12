@@ -36,7 +36,7 @@
             this.pnlProductControl = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCode1 = new System.Windows.Forms.TextBox();
             this.btnAddCut = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCode2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -140,7 +140,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtCode1);
             this.panel2.Controls.Add(this.btnAddCut);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.label4);
@@ -160,12 +160,12 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Ürün Kodu";
             // 
-            // textBox3
+            // txtCode1
             // 
-            this.textBox3.Location = new System.Drawing.Point(33, 105);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(241, 34);
-            this.textBox3.TabIndex = 5;
+            this.txtCode1.Location = new System.Drawing.Point(33, 105);
+            this.txtCode1.Name = "txtCode1";
+            this.txtCode1.Size = new System.Drawing.Size(241, 34);
+            this.txtCode1.TabIndex = 5;
             // 
             // btnAddCut
             // 
@@ -219,7 +219,7 @@
             this.panel6.Controls.Add(this.btnDelete);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.textBox2);
+            this.panel6.Controls.Add(this.txtCode2);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(1139, 419);
             this.panel6.Name = "panel6";
@@ -256,12 +256,12 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Ürün Kodu";
             // 
-            // textBox2
+            // txtCode2
             // 
-            this.textBox2.Location = new System.Drawing.Point(33, 145);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 34);
-            this.textBox2.TabIndex = 1;
+            this.txtCode2.Location = new System.Drawing.Point(33, 145);
+            this.txtCode2.Name = "txtCode2";
+            this.txtCode2.Size = new System.Drawing.Size(241, 34);
+            this.txtCode2.TabIndex = 1;
             // 
             // label6
             // 
@@ -400,11 +400,11 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCode2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCode1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtbarcod;
         private System.Windows.Forms.Button btnSrc;

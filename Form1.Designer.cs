@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblClock = new System.Windows.Forms.Label();
             this.btnCategoryListe = new System.Windows.Forms.Button();
             this.btnCatalogAdd = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
@@ -44,6 +46,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlCost = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lbCart = new System.Windows.Forms.ListBox();
@@ -60,23 +63,24 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.btnRestart = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSale = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlCost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.lblClock);
             this.panel1.Controls.Add(this.btnCategoryListe);
             this.panel1.Controls.Add(this.btnCatalogAdd);
             this.panel1.Controls.Add(this.btnPlus);
@@ -89,6 +93,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1445, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // lblClock
+            // 
+            this.lblClock.AutoSize = true;
+            this.lblClock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblClock.Location = new System.Drawing.Point(46, 11);
+            this.lblClock.Name = "lblClock";
+            this.lblClock.Size = new System.Drawing.Size(50, 28);
+            this.lblClock.TabIndex = 25;
+            this.lblClock.Text = "Saat";
             // 
             // btnCategoryListe
             // 
@@ -271,6 +285,16 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "SEPET";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
+            this.pictureBox1.Location = new System.Drawing.Point(56, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.MediumPurple;
@@ -445,16 +469,6 @@
             this.btnRestart.TabStop = false;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnSale
             // 
             this.btnSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -466,6 +480,10 @@
             this.btnSale.TabIndex = 12;
             this.btnSale.TabStop = false;
             this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -496,16 +514,17 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlCost.ResumeLayout(false);
             this.pnlCost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -548,6 +567,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblClock;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
