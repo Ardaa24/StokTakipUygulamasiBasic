@@ -57,7 +57,10 @@ namespace StokTakip
             cmd.Parameters.AddWithValue("@comment", rtbComment.Text);
             cmd.ExecuteNonQuery();
             conn.Close();
-            MessageBox.Show("Kategori başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            popupForm p = new popupForm();
+            p.lblMessage.Text = "Kategori başarıyla eklendi.";
+            p.lblMessage.Left = (p.Width - p.lblMessage.Width) / 2;
+            p.ShowDialog();
             this.Close();
         }
 
