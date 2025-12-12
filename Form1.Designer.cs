@@ -91,7 +91,7 @@
             this.btnCategoryListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategoryListe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCategoryListe.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCategoryListe.Location = new System.Drawing.Point(360, 3);
+            this.btnCategoryListe.Location = new System.Drawing.Point(360, 5);
             this.btnCategoryListe.Name = "btnCategoryListe";
             this.btnCategoryListe.Size = new System.Drawing.Size(215, 34);
             this.btnCategoryListe.TabIndex = 7;
