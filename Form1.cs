@@ -280,7 +280,10 @@ namespace MarketStokTakipApp
 
                 UpdateStock();
 
-                MessageBox.Show("Satış başarıyla tamamlandı ✅");
+                popupForm p = new popupForm();
+                p.lblMessage.Text = "Satış başarı ile tamamlandı.";
+                p.lblMessage.Left = (p.Width - p.lblMessage.Width) / 2;
+                p.ShowDialog();
 
                 cart.Clear();
                 lbCart.Items.Clear();
@@ -554,6 +557,7 @@ namespace MarketStokTakipApp
 
                 popupForm p = new popupForm();
                 p.lblMessage.Text = "PDF fatura oluşturuldu.";
+                p.lblMessage.Left = (p.Width - p.lblMessage.Width) / 2;
                 p.ShowDialog();
             }
             catch (Exception ex)
