@@ -44,7 +44,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlCost = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lbCart = new System.Windows.Forms.ListBox();
@@ -54,23 +53,24 @@
             this.btnCloseTree = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.btnRestart = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSale = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlCost.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,7 +131,7 @@
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(215, 34);
             this.btnPlus.TabIndex = 3;
-            this.btnPlus.Text = "Stok Görüntüle";
+            this.btnPlus.Text = "Stok Kontrol";
             this.btnPlus.UseVisualStyleBackColor = false;
             this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
@@ -184,14 +184,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(495, 493);
+            this.dataGridView1.Size = new System.Drawing.Size(495, 557);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 117);
+            this.label1.Location = new System.Drawing.Point(48, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 28);
             this.label1.TabIndex = 6;
@@ -199,14 +199,14 @@
             // 
             // txtbarcod
             // 
-            this.txtbarcod.Location = new System.Drawing.Point(44, 160);
+            this.txtbarcod.Location = new System.Drawing.Point(53, 143);
             this.txtbarcod.Name = "txtbarcod";
             this.txtbarcod.Size = new System.Drawing.Size(227, 34);
             this.txtbarcod.TabIndex = 7;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(44, 267);
+            this.txtName.Location = new System.Drawing.Point(53, 250);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(227, 34);
             this.txtName.TabIndex = 9;
@@ -214,7 +214,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 227);
+            this.label2.Location = new System.Drawing.Point(59, 210);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 28);
             this.label2.TabIndex = 8;
@@ -228,7 +228,7 @@
             this.btnSrc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSrc.Location = new System.Drawing.Point(0, 354);
             this.btnSrc.Name = "btnSrc";
-            this.btnSrc.Size = new System.Drawing.Size(320, 34);
+            this.btnSrc.Size = new System.Drawing.Size(332, 34);
             this.btnSrc.TabIndex = 10;
             this.btnSrc.Text = "Listele";
             this.btnSrc.UseVisualStyleBackColor = false;
@@ -241,9 +241,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(255, 155);
+            this.groupBox1.Location = new System.Drawing.Point(243, 155);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 388);
+            this.groupBox1.Size = new System.Drawing.Size(332, 388);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -270,16 +270,6 @@
             this.label4.Size = new System.Drawing.Size(114, 46);
             this.label4.TabIndex = 14;
             this.label4.Text = "SEPET";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
             // 
             // btnDelete
             // 
@@ -384,6 +374,33 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "ÜRÜN ARA";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(265, 678);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 28);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Satış";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(386, 678);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 28);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Yenile";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(486, 678);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 28);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Son Fatura";
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::StokTakip.Properties.Resources._1150612;
@@ -408,7 +425,7 @@
             // 
             this.btnPrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnPrint.Image = global::StokTakip.Properties.Resources._2832794;
-            this.btnPrint.Location = new System.Drawing.Point(493, 565);
+            this.btnPrint.Location = new System.Drawing.Point(493, 592);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(82, 83);
             this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -420,7 +437,7 @@
             // 
             this.btnRestart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnRestart.Image = global::StokTakip.Properties.Resources.restart_icon_9;
-            this.btnRestart.Location = new System.Drawing.Point(376, 565);
+            this.btnRestart.Location = new System.Drawing.Point(370, 592);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(82, 83);
             this.btnRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -428,44 +445,27 @@
             this.btnRestart.TabStop = false;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
+            this.pictureBox1.Location = new System.Drawing.Point(56, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnSale
             // 
             this.btnSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnSale.Image = global::StokTakip.Properties.Resources.sale;
-            this.btnSale.Location = new System.Drawing.Point(255, 565);
+            this.btnSale.Location = new System.Drawing.Point(243, 592);
             this.btnSale.Name = "btnSale";
             this.btnSale.Size = new System.Drawing.Size(89, 83);
             this.btnSale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSale.TabIndex = 12;
             this.btnSale.TabStop = false;
             this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(277, 651);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 28);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Satış";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(392, 651);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 28);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Yenile";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(486, 651);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 28);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Son Fatura";
             // 
             // Form1
             // 
@@ -501,11 +501,11 @@
             this.groupBox1.PerformLayout();
             this.pnlCost.ResumeLayout(false);
             this.pnlCost.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
