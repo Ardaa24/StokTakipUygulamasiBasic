@@ -68,7 +68,10 @@ namespace StokTakip
             cmd.Parameters.AddWithValue("@sprice", txtSale.Text);
             cmd.ExecuteNonQuery();
             conn.Close();
-            MessageBox.Show("Ürün Eklendi.");
+            popupForm p = new popupForm();
+            p.lblMessage.Text = "Ürün başarıyla eklendi.";
+            p.lblMessage.Left = (p.Width - p.lblMessage.Width) / 2;
+            p.ShowDialog();
 
         }
 
