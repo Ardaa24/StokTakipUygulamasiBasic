@@ -34,27 +34,31 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlProductControl = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.btnAddCut = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtbarcod = new System.Windows.Forms.TextBox();
+            this.btnSrc = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -130,23 +134,6 @@
             this.pnlProductControl.Size = new System.Drawing.Size(462, 1071);
             this.pnlProductControl.TabIndex = 7;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(816, 70);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(300, 642);
-            this.panel4.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "label3";
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -162,15 +149,34 @@
             this.panel2.Size = new System.Drawing.Size(294, 331);
             this.panel2.TabIndex = 10;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(88, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 28);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Ürün Kodu";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(33, 105);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(241, 34);
+            this.textBox3.TabIndex = 5;
+            // 
             // btnAddCut
             // 
+            this.btnAddCut.BackColor = System.Drawing.Color.MediumPurple;
             this.btnAddCut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAddCut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddCut.Location = new System.Drawing.Point(0, 293);
             this.btnAddCut.Name = "btnAddCut";
             this.btnAddCut.Size = new System.Drawing.Size(292, 36);
             this.btnAddCut.TabIndex = 4;
             this.btnAddCut.Text = "Kampanya Ekle";
-            this.btnAddCut.UseVisualStyleBackColor = true;
+            this.btnAddCut.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -183,7 +189,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 191);
+            this.label4.Location = new System.Drawing.Point(57, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(181, 28);
             this.label4.TabIndex = 2;
@@ -191,7 +197,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 232);
+            this.textBox1.Location = new System.Drawing.Point(33, 226);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(241, 34);
             this.textBox1.TabIndex = 1;
@@ -199,7 +205,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(90, 15);
+            this.label2.Location = new System.Drawing.Point(107, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 28);
             this.label2.TabIndex = 0;
@@ -218,6 +224,19 @@
             this.panel6.Size = new System.Drawing.Size(297, 291);
             this.panel6.TabIndex = 11;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelete.Location = new System.Drawing.Point(0, 253);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(295, 36);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Ürünü Sil";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -229,7 +248,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(74, 108);
+            this.label5.Location = new System.Drawing.Point(88, 114);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 28);
             this.label5.TabIndex = 2;
@@ -237,7 +256,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(19, 139);
+            this.textBox2.Location = new System.Drawing.Point(33, 145);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(241, 34);
             this.textBox2.TabIndex = 1;
@@ -245,37 +264,70 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(66, 15);
+            this.label6.Location = new System.Drawing.Point(83, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(175, 28);
             this.label6.TabIndex = 0;
             this.label6.Text = "SEÇİLİ ÜRÜNÜ SİL";
             // 
-            // btnDelete
+            // groupBox1
             // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnDelete.Location = new System.Drawing.Point(0, 253);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(295, 36);
-            this.btnDelete.TabIndex = 5;
-            this.btnDelete.Text = "Ürünü Sil";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.txtbarcod);
+            this.groupBox1.Controls.Add(this.btnSrc);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtName);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Location = new System.Drawing.Point(801, 75);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(332, 388);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
             // 
-            // label7
+            // txtbarcod
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 73);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 28);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Ürün Kodu";
+            this.txtbarcod.Location = new System.Drawing.Point(53, 143);
+            this.txtbarcod.Name = "txtbarcod";
+            this.txtbarcod.Size = new System.Drawing.Size(227, 34);
+            this.txtbarcod.TabIndex = 7;
             // 
-            // textBox3
+            // btnSrc
             // 
-            this.textBox3.Location = new System.Drawing.Point(22, 104);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(241, 34);
-            this.textBox3.TabIndex = 5;
+            this.btnSrc.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnSrc.FlatAppearance.BorderSize = 0;
+            this.btnSrc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSrc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSrc.Location = new System.Drawing.Point(0, 354);
+            this.btnSrc.Name = "btnSrc";
+            this.btnSrc.Size = new System.Drawing.Size(332, 34);
+            this.btnSrc.TabIndex = 10;
+            this.btnSrc.Text = "Listele";
+            this.btnSrc.UseVisualStyleBackColor = false;
+            this.btnSrc.Click += new System.EventHandler(this.btnSrc_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(48, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(232, 28);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Barkod Numarası İle Ara";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(53, 250);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(227, 34);
+            this.txtName.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(59, 210);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 28);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "İsimİle Ara";
             // 
             // frmStock
             // 
@@ -283,9 +335,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1445, 724);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.pnlProductControl);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
@@ -299,12 +351,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -317,8 +369,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel pnlProductControl;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnAddCut;
         private System.Windows.Forms.Panel panel5;
@@ -333,5 +383,11 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtbarcod;
+        private System.Windows.Forms.Button btnSrc;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label label8;
     }
 }

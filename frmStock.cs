@@ -52,6 +52,24 @@ namespace StokTakip
             }
         }
 
+        private void btnSrc_Click(object sender, EventArgs e)
+        {
+            conn.Open();
 
+            SqlCommand cmd = new SqlCommand(
+                "SELECT * FROM tblProduct  WHERE(@pname = '' OR pname LIKE @pname)AND(@pcode = '' OR pcode LIKE @pcode)", conn);
+
+            cmd.Parameters.AddWithValue("@pname", "%" + txtName.Text + "%");
+            cmd.Parameters.AddWithValue("@pcode", "%" + txtbarcod.Text + "%");
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            conn.Close();
+            txtbarcod.Clear();
+            txtName.Clear();
+        }
     }
 }
