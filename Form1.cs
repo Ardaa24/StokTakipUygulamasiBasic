@@ -246,7 +246,7 @@ namespace MarketStokTakipApp
             {
                 popupForm p = new popupForm();
                 p.lblMessage.Text = "Sepetiniz boş. Lütfen önce ürün ekleyin.";
-                p.lblMessage.Padding = new Padding(20);
+                p.lblMessage.Left = (p.Width - p.lblMessage.Width) / 2;
                 p.ShowDialog();
                 return;
             }
