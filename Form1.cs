@@ -1,4 +1,7 @@
-﻿using StokTakip;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.pdf.parser;
+using StokTakip;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,16 +10,13 @@ using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
-
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.IO;
 
 namespace MarketStokTakipApp
 {
@@ -559,37 +559,31 @@ namespace MarketStokTakipApp
 
         private void btnSrc_Click(object sender, EventArgs e)
         {
-            srcbarcod();
-            srcname();
+           srcNameAndBarcod();
+            txtbarcod.Clear();
+            txtName.Clear();
         }
 
-        private void srcname()
+        private void srcNameAndBarcod()
         {
             conn.Open();
+
             SqlCommand cmd = new SqlCommand(
-                "SELECT * FROM tblProduct WHERE pname LIKE @pname", conn);
+                "SELECT * FROM tblProduct  WHERE(@pname = '' OR pname LIKE @pname)AND(@pcode = '' OR pcode LIKE @pcode)", conn);
+
             cmd.Parameters.AddWithValue("@pname", "%" + txtName.Text + "%");
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            conn.Close();
-
-        }
-
-        private void srcbarcod()
-        {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(
-                "SELECT * FROM tblProduct WHERE pcode LIKE @pcode", conn);
             cmd.Parameters.AddWithValue("@pcode", "%" + txtbarcod.Text + "%");
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
             conn.Close();
         }
-    }
 
+
+    
+
+    }
 }
