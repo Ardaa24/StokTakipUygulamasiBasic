@@ -349,7 +349,6 @@
             this.label9.Size = new System.Drawing.Size(111, 28);
             this.label9.TabIndex = 11;
             this.label9.Text = "ÜRÜN ARA";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // frmStock
             // 
