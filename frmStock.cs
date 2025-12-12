@@ -44,7 +44,7 @@ namespace StokTakip
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "HATA");
+             MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {

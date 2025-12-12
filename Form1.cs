@@ -244,7 +244,10 @@ namespace MarketStokTakipApp
         {
             if (cart.Count == 0)
             {
-                MessageBox.Show("Sepet boş!");
+                popupForm p = new popupForm();
+                p.lblMessage.Text = "Sepetiniz boş. Lütfen önce ürün ekleyin.";
+                p.lblMessage.Padding = new Padding(20);
+                p.ShowDialog();
                 return;
             }
 
@@ -549,7 +552,9 @@ namespace MarketStokTakipApp
                 {
                 }
 
-                MessageBox.Show("PDF fatura olusturuldu:\n" + filePath, "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                popupForm p = new popupForm();
+                p.lblMessage.Text = "PDF fatura oluşturuldu.";
+                p.ShowDialog();
             }
             catch (Exception ex)
             {
