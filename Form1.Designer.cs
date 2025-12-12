@@ -44,7 +44,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlCost = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lbCart = new System.Windows.Forms.ListBox();
@@ -52,16 +51,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tvList = new System.Windows.Forms.TreeView();
             this.btnCloseTree = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.btnRestart = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSale = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlCost.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,18 +174,18 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(590, 136);
+            this.dataGridView1.Location = new System.Drawing.Point(590, 155);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(495, 512);
+            this.dataGridView1.Size = new System.Drawing.Size(495, 493);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 47);
+            this.label1.Location = new System.Drawing.Point(39, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 28);
             this.label1.TabIndex = 6;
@@ -190,14 +193,14 @@
             // 
             // txtbarcod
             // 
-            this.txtbarcod.Location = new System.Drawing.Point(43, 90);
+            this.txtbarcod.Location = new System.Drawing.Point(44, 160);
             this.txtbarcod.Name = "txtbarcod";
             this.txtbarcod.Size = new System.Drawing.Size(227, 34);
             this.txtbarcod.TabIndex = 7;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(43, 197);
+            this.txtName.Location = new System.Drawing.Point(44, 267);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(227, 34);
             this.txtName.TabIndex = 9;
@@ -205,7 +208,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 157);
+            this.label2.Location = new System.Drawing.Point(50, 227);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 28);
             this.label2.TabIndex = 8;
@@ -217,9 +220,9 @@
             this.btnSrc.FlatAppearance.BorderSize = 0;
             this.btnSrc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSrc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSrc.Location = new System.Drawing.Point(43, 270);
+            this.btnSrc.Location = new System.Drawing.Point(0, 354);
             this.btnSrc.Name = "btnSrc";
-            this.btnSrc.Size = new System.Drawing.Size(227, 34);
+            this.btnSrc.Size = new System.Drawing.Size(320, 34);
             this.btnSrc.TabIndex = 10;
             this.btnSrc.Text = "Listele";
             this.btnSrc.UseVisualStyleBackColor = false;
@@ -232,9 +235,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(255, 136);
+            this.groupBox1.Location = new System.Drawing.Point(255, 155);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 407);
+            this.groupBox1.Size = new System.Drawing.Size(320, 388);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Ara";
@@ -262,16 +265,6 @@
             this.label4.Size = new System.Drawing.Size(114, 46);
             this.label4.TabIndex = 14;
             this.label4.Text = "SEPET";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
             // 
             // btnDelete
             // 
@@ -356,6 +349,26 @@
             this.btnCloseTree.UseVisualStyleBackColor = false;
             this.btnCloseTree.Click += new System.EventHandler(this.btnCloseTree_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(760, 99);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(254, 46);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "TÜM ÜRÜNLER";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::StokTakip.Properties.Resources._4252314;
+            this.pictureBox2.Location = new System.Drawing.Point(670, 99);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(84, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
             // btnPrint
             // 
             this.btnPrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -380,6 +393,16 @@
             this.btnRestart.TabStop = false;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnSale
             // 
             this.btnSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -397,6 +420,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 724);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.btnCloseTree);
@@ -419,11 +444,13 @@
             this.groupBox1.PerformLayout();
             this.pnlCost.ResumeLayout(false);
             this.pnlCost.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -456,6 +483,8 @@
         public System.Windows.Forms.TreeView tvList;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
