@@ -52,23 +52,23 @@
             this.tvList = new System.Windows.Forms.TreeView();
             this.btnCloseTree = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.btnRestart = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSale = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlCost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -262,7 +262,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(118, 4);
+            this.label4.Location = new System.Drawing.Point(146, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 46);
             this.label4.TabIndex = 14;
@@ -361,6 +361,26 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "TÜM ÜRÜNLER";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(352, 106);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(191, 46);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "ÜRÜN ARA";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::StokTakip.Properties.Resources._1150612;
+            this.pictureBox3.Location = new System.Drawing.Point(273, 106);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(73, 46);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 20;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::StokTakip.Properties.Resources._4252314;
@@ -398,7 +418,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::StokTakip.Properties.Resources.Cart_PNG_Clipart;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(56, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(84, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -416,26 +436,6 @@
             this.btnSale.TabIndex = 12;
             this.btnSale.TabStop = false;
             this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(352, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(191, 46);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "ÜRÜN ARA";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::StokTakip.Properties.Resources._1150612;
-            this.pictureBox3.Location = new System.Drawing.Point(273, 106);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(73, 46);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 20;
-            this.pictureBox3.TabStop = false;
             // 
             // Form1
             // 
@@ -468,12 +468,12 @@
             this.groupBox1.PerformLayout();
             this.pnlCost.ResumeLayout(false);
             this.pnlCost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSale)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
