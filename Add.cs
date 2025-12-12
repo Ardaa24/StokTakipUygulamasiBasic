@@ -72,10 +72,11 @@ namespace StokTakip
             p.lblMessage.Text = "Ürün başarıyla eklendi.";
             p.lblMessage.Left = (p.Width - p.lblMessage.Width) / 2;
             p.ShowDialog();
+            this.Close();
 
         }
 
-       
+
 
         void getInfo()
         {
