@@ -143,6 +143,16 @@ namespace StokTakip.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap left {
+            get {
+                object obj = ResourceManager.GetObject("left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_e_fatura_850x519 {
             get {
                 object obj = ResourceManager.GetObject("logo-e-fatura-850x519", resourceCulture);
@@ -166,6 +176,16 @@ namespace StokTakip.Properties {
         internal static System.Drawing.Bitmap sale {
             get {
                 object obj = ResourceManager.GetObject("sale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap web_button_icon_back_button_free_png {
+            get {
+                object obj = ResourceManager.GetObject("web-button-icon-back-button-free-png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
