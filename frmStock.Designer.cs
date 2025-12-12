@@ -49,13 +49,13 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtbarcod = new System.Windows.Forms.TextBox();
             this.btnSrc = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -146,9 +146,9 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(1139, 70);
+            this.panel2.Location = new System.Drawing.Point(804, 419);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(294, 331);
+            this.panel2.Size = new System.Drawing.Size(326, 293);
             this.panel2.TabIndex = 10;
             // 
             // label7
@@ -173,9 +173,9 @@
             this.btnAddCut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnAddCut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddCut.Location = new System.Drawing.Point(0, 293);
+            this.btnAddCut.Location = new System.Drawing.Point(0, 255);
             this.btnAddCut.Name = "btnAddCut";
-            this.btnAddCut.Size = new System.Drawing.Size(292, 36);
+            this.btnAddCut.Size = new System.Drawing.Size(324, 36);
             this.btnAddCut.TabIndex = 4;
             this.btnAddCut.Text = "Kampanya Ekle";
             this.btnAddCut.UseVisualStyleBackColor = false;
@@ -185,13 +185,13 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel5.Location = new System.Drawing.Point(3, 46);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(308, 15);
+            this.panel5.Size = new System.Drawing.Size(325, 15);
             this.panel5.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 195);
+            this.label4.Location = new System.Drawing.Point(43, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(181, 28);
             this.label4.TabIndex = 2;
@@ -199,7 +199,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(33, 226);
+            this.textBox1.Location = new System.Drawing.Point(33, 207);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(241, 34);
             this.textBox1.TabIndex = 1;
@@ -283,13 +283,30 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(801, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 346);
+            this.groupBox1.Size = new System.Drawing.Size(635, 346);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Location = new System.Drawing.Point(0, 62);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(644, 15);
+            this.panel4.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(287, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 28);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "ÜRÜN ARA";
+            // 
             // txtbarcod
             // 
-            this.txtbarcod.Location = new System.Drawing.Point(49, 135);
+            this.txtbarcod.Location = new System.Drawing.Point(51, 190);
             this.txtbarcod.Name = "txtbarcod";
             this.txtbarcod.Size = new System.Drawing.Size(227, 34);
             this.txtbarcod.TabIndex = 7;
@@ -297,12 +314,13 @@
             // btnSrc
             // 
             this.btnSrc.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnSrc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSrc.FlatAppearance.BorderSize = 0;
             this.btnSrc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSrc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSrc.Location = new System.Drawing.Point(1, 309);
+            this.btnSrc.Location = new System.Drawing.Point(3, 309);
             this.btnSrc.Name = "btnSrc";
-            this.btnSrc.Size = new System.Drawing.Size(332, 34);
+            this.btnSrc.Size = new System.Drawing.Size(629, 34);
             this.btnSrc.TabIndex = 10;
             this.btnSrc.Text = "Listele";
             this.btnSrc.UseVisualStyleBackColor = false;
@@ -311,7 +329,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 92);
+            this.label3.Location = new System.Drawing.Point(46, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(232, 28);
             this.label3.TabIndex = 6;
@@ -319,7 +337,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(49, 242);
+            this.txtName.Location = new System.Drawing.Point(372, 190);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(227, 34);
             this.txtName.TabIndex = 9;
@@ -327,28 +345,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(55, 202);
+            this.label8.Location = new System.Drawing.Point(378, 150);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 28);
             this.label8.TabIndex = 8;
             this.label8.Text = "İsimİle Ara";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel4.Location = new System.Drawing.Point(0, 62);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(342, 15);
-            this.panel4.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(110, 31);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 28);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "ÜRÜN ARA";
             // 
             // frmStock
             // 
