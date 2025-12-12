@@ -71,5 +71,10 @@ namespace StokTakip
             txtbarcod.Clear();
             txtName.Clear();
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

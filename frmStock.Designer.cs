@@ -54,6 +54,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -152,7 +154,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(88, 74);
+            this.label7.Location = new System.Drawing.Point(43, 76);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 28);
             this.label7.TabIndex = 6;
@@ -189,7 +191,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 185);
+            this.label4.Location = new System.Drawing.Point(43, 195);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(181, 28);
             this.label4.TabIndex = 2;
@@ -248,7 +250,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(88, 114);
+            this.label5.Location = new System.Drawing.Point(43, 114);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 28);
             this.label5.TabIndex = 2;
@@ -272,20 +274,22 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtbarcod);
             this.groupBox1.Controls.Add(this.btnSrc);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(801, 75);
+            this.groupBox1.Location = new System.Drawing.Point(801, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 388);
+            this.groupBox1.Size = new System.Drawing.Size(332, 346);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
             // txtbarcod
             // 
-            this.txtbarcod.Location = new System.Drawing.Point(53, 143);
+            this.txtbarcod.Location = new System.Drawing.Point(49, 135);
             this.txtbarcod.Name = "txtbarcod";
             this.txtbarcod.Size = new System.Drawing.Size(227, 34);
             this.txtbarcod.TabIndex = 7;
@@ -296,7 +300,7 @@
             this.btnSrc.FlatAppearance.BorderSize = 0;
             this.btnSrc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSrc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSrc.Location = new System.Drawing.Point(0, 354);
+            this.btnSrc.Location = new System.Drawing.Point(1, 309);
             this.btnSrc.Name = "btnSrc";
             this.btnSrc.Size = new System.Drawing.Size(332, 34);
             this.btnSrc.TabIndex = 10;
@@ -307,7 +311,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 100);
+            this.label3.Location = new System.Drawing.Point(44, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(232, 28);
             this.label3.TabIndex = 6;
@@ -315,7 +319,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(53, 250);
+            this.txtName.Location = new System.Drawing.Point(49, 242);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(227, 34);
             this.txtName.TabIndex = 9;
@@ -323,11 +327,29 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(59, 210);
+            this.label8.Location = new System.Drawing.Point(55, 202);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 28);
             this.label8.TabIndex = 8;
             this.label8.Text = "İsimİle Ara";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Location = new System.Drawing.Point(0, 62);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(342, 15);
+            this.panel4.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(110, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 28);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "ÜRÜN ARA";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // frmStock
             // 
@@ -389,5 +411,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label9;
     }
 }
