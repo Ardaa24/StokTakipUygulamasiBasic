@@ -83,6 +83,16 @@ namespace StokTakip.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap _1150612 {
+            get {
+                object obj = ResourceManager.GetObject("1150612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap _2832794 {
             get {
                 object obj = ResourceManager.GetObject("2832794", resourceCulture);
