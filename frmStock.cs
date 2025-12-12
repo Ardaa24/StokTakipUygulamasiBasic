@@ -35,7 +35,6 @@ namespace StokTakip
         {
             try
             {
-                conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM tblProduct", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -48,7 +47,7 @@ namespace StokTakip
             }
             finally
             {
-                conn.Close();
+                // Optional: any cleanup code can go here
             }
         }
 
@@ -72,6 +71,59 @@ namespace StokTakip
             txtName.Clear();
         }
 
-       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                txtCode1.Text = row.Cells["pcode"].Value.ToString();
+                txtCode2.Text = row.Cells["pcode"].Value.ToString();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCode1.Text))
+            {
+                MessageBox.Show("Lütfen silmek için bir ürün seçin!");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Bu ürünü silmek istediğinizden emin misiniz?",
+                "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(
+                        "DELETE FROM tblProduct WHERE pcode = @pcode", conn);
+
+                    cmd.Parameters.AddWithValue("@pcode", txtCode1.Text);
+
+                    int affected = cmd.ExecuteNonQuery();
+
+                    if (affected > 0)
+                        MessageBox.Show("Ürün başarıyla silindi.");
+                    else
+                        MessageBox.Show("Ürün bulunamadı!");
+
+                    LoadProducts(); // tabloyu yenile
+                    txtCode1.Clear();
+                    txtCode2.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hata: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }
