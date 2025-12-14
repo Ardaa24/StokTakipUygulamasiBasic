@@ -194,7 +194,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(600, 155);
+            this.dataGridView1.Location = new System.Drawing.Point(610, 155);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -255,7 +255,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(243, 155);
+            this.groupBox1.Location = new System.Drawing.Point(257, 155);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(332, 388);
             this.groupBox1.TabIndex = 11;
@@ -359,7 +359,7 @@
             this.tvList.LineColor = System.Drawing.Color.White;
             this.tvList.Location = new System.Drawing.Point(0, 45);
             this.tvList.Name = "tvList";
-            this.tvList.Size = new System.Drawing.Size(237, 679);
+            this.tvList.Size = new System.Drawing.Size(251, 679);
             this.tvList.TabIndex = 14;
             this.tvList.Visible = false;
             this.tvList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvList_AfterSelect_1);
@@ -372,7 +372,7 @@
             this.btnCloseTree.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCloseTree.Location = new System.Drawing.Point(0, 667);
             this.btnCloseTree.Name = "btnCloseTree";
-            this.btnCloseTree.Size = new System.Drawing.Size(237, 34);
+            this.btnCloseTree.Size = new System.Drawing.Size(251, 34);
             this.btnCloseTree.TabIndex = 15;
             this.btnCloseTree.Text = "Kapat";
             this.btnCloseTree.UseVisualStyleBackColor = false;
@@ -392,7 +392,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(352, 106);
+            this.label6.Location = new System.Drawing.Point(366, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(191, 46);
             this.label6.TabIndex = 21;
@@ -401,7 +401,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(265, 678);
+            this.label7.Location = new System.Drawing.Point(279, 678);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 28);
             this.label7.TabIndex = 22;
@@ -410,7 +410,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(386, 678);
+            this.label8.Location = new System.Drawing.Point(400, 678);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 28);
             this.label8.TabIndex = 23;
@@ -419,7 +419,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(486, 678);
+            this.label9.Location = new System.Drawing.Point(498, 678);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 28);
             this.label9.TabIndex = 24;
@@ -428,7 +428,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::StokTakip.Properties.Resources._1150612;
-            this.pictureBox3.Location = new System.Drawing.Point(273, 106);
+            this.pictureBox3.Location = new System.Drawing.Point(287, 106);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(73, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -449,7 +449,7 @@
             // 
             this.btnPrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnPrint.Image = global::StokTakip.Properties.Resources._2832794;
-            this.btnPrint.Location = new System.Drawing.Point(493, 592);
+            this.btnPrint.Location = new System.Drawing.Point(507, 592);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(82, 83);
             this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -461,7 +461,7 @@
             // 
             this.btnRestart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnRestart.Image = global::StokTakip.Properties.Resources.restart_icon_9;
-            this.btnRestart.Location = new System.Drawing.Point(370, 592);
+            this.btnRestart.Location = new System.Drawing.Point(384, 592);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(82, 83);
             this.btnRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -473,7 +473,7 @@
             // 
             this.btnSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnSale.Image = global::StokTakip.Properties.Resources.sale;
-            this.btnSale.Location = new System.Drawing.Point(243, 592);
+            this.btnSale.Location = new System.Drawing.Point(257, 592);
             this.btnSale.Name = "btnSale";
             this.btnSale.Size = new System.Drawing.Size(89, 83);
             this.btnSale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

@@ -102,7 +102,6 @@ namespace MarketStokTakipApp
         {
             try
             {
-                conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM tblProduct", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -115,7 +114,6 @@ namespace MarketStokTakipApp
             }
             finally
             {
-                conn.Close();
             }
         }
 
@@ -283,6 +281,7 @@ namespace MarketStokTakipApp
                 }
 
                 UpdateStock();
+                LoadProducts();
 
                 popupForm p = new popupForm();
                 p.lblMessage.Text = "Satış başarı ile tamamlandı.";
@@ -293,6 +292,7 @@ namespace MarketStokTakipApp
                 lbCart.Items.Clear();
                 total = 0;
                 lblTotal.Text = "0.00 ₺";
+
             }
             catch (Exception ex)
             {
