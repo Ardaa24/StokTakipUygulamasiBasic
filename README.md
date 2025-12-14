@@ -30,7 +30,7 @@ Bu proje, bir işletmenin ürün stoklarını takip edebileceği, ürünleri ara
 | OOP | Nesne yönelimli programlama |
 
 ---
-##🎯 Amaç
+## 🎯 Amaç
 
 Bu proje ile:
 
@@ -46,7 +46,7 @@ hedeflenmiştir.
 
 ---
 
-##🔮 Geliştirilebilir Özellikler
+## 🔮 Geliştirilebilir Özellikler
 
 Kullanıcı giriş sistemi
 
