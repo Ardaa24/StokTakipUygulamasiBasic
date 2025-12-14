@@ -31,12 +31,6 @@ Bu proje, bir işletmenin ürün stoklarını takip edebileceği, ürünleri ara
 
 ---
 
-## 📁 Proje Yapısı
-StokTakipUygulamasi/
-├── StokTakipUygulamasi.sln # Çözüm dosyası
-├── WinFormUI/ # Arayüz katmanı
-├── ORM/ # Veri erişim katmanı
-├── Entity/ # Model sınıfları
-├── Database/ # SQL scriptler & yedekler
-└── README.md # Proje açıklamasi
+📜 Teşekkürler
 
+📌 Bu proje, C# kullanarak stok takibi yapan basit ve etkili bir uygulama örneğidir. Yazılımcılar için iyi bir referans kod yapısı sağlar.
