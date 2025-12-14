@@ -150,18 +150,20 @@ namespace StokTakip
 
             cutRate /= 100;
 
+
+            //Geçici kampanya kısmı. İleride veritbanına eklenebilir. Şimdilik sadece UI üzerinde gösteriliyor.
+            // İndirim uygulanmış ürünler yeşil renkle gösteriliyor.
+            // İndirim geri alındığında orijinal fiyat geri yükleniyor.
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.IsNewRow) continue;
 
                 if (row.Cells["pcode"].Value.ToString() == txtCode1.Text)
                 {
-                    // 🔁 Kampanya var mı?
                     bool isCampaign = row.DefaultCellStyle.BackColor == Color.LightGreen;
 
                     if (!isCampaign)
                     {
-                        // 🟢 Kampanya uygula
                         row.Cells["originalPrice"].Value = row.Cells["sprice"].Value;
 
                         decimal originalPrice = Convert.ToDecimal(row.Cells["sprice"].Value);
@@ -174,7 +176,6 @@ namespace StokTakip
                     }
                     else
                     {
-                        // 🔴 Kampanyayı geri al
                         row.Cells["sprice"].Value = row.Cells["originalPrice"].Value;
                         row.DefaultCellStyle.BackColor = Color.White;
 
