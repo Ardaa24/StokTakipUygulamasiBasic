@@ -31,6 +31,6 @@ Bu proje, bir işletmenin ürün stoklarını takip edebileceği, ürünleri ara
 
 ---
 
-📜 Teşekkürler
+## 📜 Teşekkürler
 
 📌 Bu proje, C# kullanarak stok takibi yapan basit ve etkili bir uygulama örneğidir. Yazılımcılar için iyi bir referans kod yapısı sağlar.
