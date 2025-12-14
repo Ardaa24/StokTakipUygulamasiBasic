@@ -178,7 +178,7 @@
             this.btnAddCut.Name = "btnAddCut";
             this.btnAddCut.Size = new System.Drawing.Size(324, 36);
             this.btnAddCut.TabIndex = 4;
-            this.btnAddCut.Text = "Kampanya Ekle";
+            this.btnAddCut.Text = "Kampanya Ekle / Kaldır";
             this.btnAddCut.UseVisualStyleBackColor = false;
             this.btnAddCut.Click += new System.EventHandler(this.btnAddCut_Click);
             // 
