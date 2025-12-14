@@ -29,12 +29,20 @@ namespace StokTakip
         private void frmStock_Load(object sender, EventArgs e)
         {
             LoadProducts();
+            if (!dataGridView1.Columns.Contains("originalPrice"))
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.Name = "originalPrice";
+                col.Visible = false;
+                dataGridView1.Columns.Add(col);
+            }
         }
 
         private void LoadProducts()
         {
             try
             {
+
                 SqlCommand cmd = new SqlCommand("SELECT * FROM tblProduct", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -43,11 +51,11 @@ namespace StokTakip
             }
             catch (Exception ex)
             {
-             MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {
-                // Optional: any cleanup code can go here
+                // Optional: conn close ve dispose işlemleri burada yapılabilir
             }
         }
 
@@ -124,6 +132,60 @@ namespace StokTakip
                     conn.Close();
                 }
             }
+        }
+
+        private void btnAddCut_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCode1.Text))
+            {
+                MessageBox.Show("Lütfen ürün seçin.");
+                return;
+            }
+
+            if (!decimal.TryParse(txtCut.Text, out decimal cutRate))
+            {
+                MessageBox.Show("Geçerli bir indirim yüzdesi girin.");
+                return;
+            }
+
+            cutRate /= 100;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                if (row.Cells["pcode"].Value.ToString() == txtCode1.Text)
+                {
+                    // 🔁 Kampanya var mı?
+                    bool isCampaign = row.DefaultCellStyle.BackColor == Color.LightGreen;
+
+                    if (!isCampaign)
+                    {
+                        // 🟢 Kampanya uygula
+                        row.Cells["originalPrice"].Value = row.Cells["sprice"].Value;
+
+                        decimal originalPrice = Convert.ToDecimal(row.Cells["sprice"].Value);
+                        decimal discountedPrice = originalPrice - (originalPrice * cutRate);
+
+                        row.Cells["sprice"].Value = discountedPrice;
+                        row.DefaultCellStyle.BackColor = Color.LightGreen;
+
+                        MessageBox.Show("Kampanya uygulandı.");
+                    }
+                    else
+                    {
+                        // 🔴 Kampanyayı geri al
+                        row.Cells["sprice"].Value = row.Cells["originalPrice"].Value;
+                        row.DefaultCellStyle.BackColor = Color.White;
+
+                        MessageBox.Show("Kampanya geri alındı.");
+                    }
+
+                    return;
+                }
+            }
+
+            MessageBox.Show("Ürün bulunamadı.");
         }
     }
 }

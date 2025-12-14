@@ -40,7 +40,7 @@
             this.btnAddCut = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCut = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -145,7 +145,7 @@
             this.panel2.Controls.Add(this.btnAddCut);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtCut);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(804, 419);
             this.panel2.Name = "panel2";
@@ -180,6 +180,7 @@
             this.btnAddCut.TabIndex = 4;
             this.btnAddCut.Text = "Kampanya Ekle";
             this.btnAddCut.UseVisualStyleBackColor = false;
+            this.btnAddCut.Click += new System.EventHandler(this.btnAddCut_Click);
             // 
             // panel5
             // 
@@ -198,12 +199,12 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Kampanya Yüzdesi";
             // 
-            // textBox1
+            // txtCut
             // 
-            this.textBox1.Location = new System.Drawing.Point(33, 207);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 34);
-            this.textBox1.TabIndex = 1;
+            this.txtCut.Location = new System.Drawing.Point(33, 207);
+            this.txtCut.Name = "txtCut";
+            this.txtCut.Size = new System.Drawing.Size(241, 34);
+            this.txtCut.TabIndex = 1;
             // 
             // label2
             // 
@@ -397,7 +398,7 @@
         private System.Windows.Forms.Button btnAddCut;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCut;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
