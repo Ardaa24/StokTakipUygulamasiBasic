@@ -114,6 +114,7 @@ namespace MarketStokTakipApp
             }
             finally
             {
+                // Optional: conn close ve dispose işlemleri burada yapılabilir
             }
         }
 
