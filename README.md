@@ -30,7 +30,35 @@ Bu proje, bir işletmenin ürün stoklarını takip edebileceği, ürünleri ara
 | OOP | Nesne yönelimli programlama |
 
 ---
+##🎯 Amaç
 
+Bu proje ile:
+
+WinForms mantığını öğrenmek
+
+C# ile CRUD işlemleri yapmak
+
+Stok takip algoritmasını kavramak
+
+Gerçek hayata yakın bir masaüstü uygulaması geliştirmek
+
+hedeflenmiştir.
+
+---
+
+##🔮 Geliştirilebilir Özellikler
+
+Kullanıcı giriş sistemi
+
+Yetkilendirme (Admin / Kasiyer)
+
+Kampanya bilgilerini veritabanına kaydetme
+
+Raporlama (PDF / Excel)
+
+Grafik destekli stok analizi
+
+---
 ## 📜 Teşekkürler
 
 📌 Bu proje, C# kullanarak stok takibi yapan basit ve etkili bir uygulama örneğidir. Yazılımcılar için iyi bir referans kod yapısı sağlar.
