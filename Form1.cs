@@ -575,6 +575,7 @@ namespace MarketStokTakipApp
            srcNameAndBarcod();
             txtbarcod.Clear();
             txtName.Clear();
+            //Barkod aratıldığında gelen ürünü sepete ekleme işlemi
         }
 
         private void srcNameAndBarcod()

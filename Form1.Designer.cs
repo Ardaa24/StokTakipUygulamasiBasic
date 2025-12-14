@@ -91,7 +91,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1445, 45);
+            this.panel1.Size = new System.Drawing.Size(1502, 45);
             this.panel1.TabIndex = 0;
             // 
             // lblClock
@@ -181,7 +181,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1395, 0);
+            this.button1.Location = new System.Drawing.Point(1452, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 45);
@@ -194,11 +194,11 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(590, 155);
+            this.dataGridView1.Location = new System.Drawing.Point(600, 155);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(495, 557);
+            this.dataGridView1.Size = new System.Drawing.Size(566, 557);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -270,7 +270,7 @@
             this.pnlCost.Controls.Add(this.lbCart);
             this.pnlCost.Controls.Add(this.lblTotal);
             this.pnlCost.Controls.Add(this.label3);
-            this.pnlCost.Location = new System.Drawing.Point(1119, 95);
+            this.pnlCost.Location = new System.Drawing.Point(1172, 95);
             this.pnlCost.Name = "pnlCost";
             this.pnlCost.Size = new System.Drawing.Size(318, 617);
             this.pnlCost.TabIndex = 13;
@@ -489,7 +489,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 724);
+            this.ClientSize = new System.Drawing.Size(1502, 724);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
