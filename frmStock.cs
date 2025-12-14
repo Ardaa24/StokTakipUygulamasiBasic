@@ -193,7 +193,6 @@ namespace StokTakip
                         p3.lblMessage.Text = "Kampanya uygulandı. Kampanya yüzdesi:" + cutRate;
                         p3.lblMessage.Left = (p3.Width - p3.lblMessage.Width) / 2;
                         p3.ShowDialog();
-                        txtCut.Text = "";
                     }
                     else
                     {
