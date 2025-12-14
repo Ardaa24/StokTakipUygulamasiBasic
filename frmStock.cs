@@ -115,9 +115,20 @@ namespace StokTakip
                     int affected = cmd.ExecuteNonQuery();
 
                     if (affected > 0)
-                        MessageBox.Show("Ürün başarıyla silindi.");
+                    {
+                        popupForm p = new popupForm();
+                        p.lblMessage.Text = "Ürün silindi.";
+                        p.lblMessage.Left = (p.Width - p.lblMessage.Width) / 2;
+                        p.ShowDialog();
+                    }
                     else
-                        MessageBox.Show("Ürün bulunamadı!");
+                        {
+                        popupForm p = new popupForm();
+                        p.lblMessage.Text = "Sepetiniz boş. Lütfen önce ürün ekleyin.";
+                        p.lblMessage.Left = (p.Width - p.lblMessage.Width) / 2;
+                        p.ShowDialog();
+                        
+                    }
 
                     LoadProducts(); // tabloyu yenile
                     txtCode1.Clear();
@@ -138,13 +149,19 @@ namespace StokTakip
         {
             if (string.IsNullOrWhiteSpace(txtCode1.Text))
             {
-                MessageBox.Show("Lütfen ürün seçin.");
+                popupForm pop = new popupForm();
+                pop.lblMessage.Text = "Lütfen önce ürün seçin.";
+                pop.lblMessage.Left = (pop.Width - pop.lblMessage.Width) / 2;
+                pop.ShowDialog();
                 return;
             }
 
             if (!decimal.TryParse(txtCut.Text, out decimal cutRate))
             {
-                MessageBox.Show("Geçerli bir indirim yüzdesi girin.");
+                popupForm p2 = new popupForm();
+                p2.lblMessage.Text = "Lütfen geçerli bir indirim yüzdesi girin.";
+                p2.lblMessage.Left = (p2.Width - p2.lblMessage.Width) / 2;
+                p2.ShowDialog();
                 return;
             }
 
@@ -172,21 +189,32 @@ namespace StokTakip
                         row.Cells["sprice"].Value = discountedPrice;
                         row.DefaultCellStyle.BackColor = Color.LightGreen;
 
-                        MessageBox.Show("Kampanya uygulandı.");
+                        popupForm p3 = new popupForm();
+                        p3.lblMessage.Text = "Kampanya uygulandı. Kampanya yüzdesi:" + cutRate;
+                        p3.lblMessage.Left = (p3.Width - p3.lblMessage.Width) / 2;
+                        p3.ShowDialog();
+                        txtCut.Text = "";
                     }
                     else
                     {
                         row.Cells["sprice"].Value = row.Cells["originalPrice"].Value;
                         row.DefaultCellStyle.BackColor = Color.White;
 
-                        MessageBox.Show("Kampanya geri alındı.");
+                        popupForm p4 = new popupForm();
+                        p4.lblMessage.Text = "Kampanya geri alındı.";
+                        p4.lblMessage.Left = (p4.Width - p4.lblMessage.Width) / 2;
+                        p4.ShowDialog();
                     }
-
                     return;
+
                 }
             }
 
-            MessageBox.Show("Ürün bulunamadı.");
+            popupForm p = new popupForm();
+            p.lblMessage.Text = "Ürün bulunamadı.";
+            p.lblMessage.Left = (p.Width - p.lblMessage.Width) / 2;
+            p.ShowDialog();
+            return;
         }
     }
 }
